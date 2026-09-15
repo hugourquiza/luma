@@ -1,0 +1,956 @@
+{
+  "id": "taller-letras",
+  "name": "Taller de las letras",
+  "color": "workshop",
+  "skills": [
+    "b",
+    "v",
+    "ñ",
+    "ch",
+    "c",
+    "qu",
+    "r"
+  ],
+  "lessons": [
+    {
+      "id": "taller-letras-l1",
+      "regionId": "taller-letras",
+      "title": "Lección 1",
+      "activities": [
+        {
+          "id": "taller-letras-l1-a0-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "sound-v"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra vaca.",
+          "hintAudioId": "hint-vaca",
+          "stimulusAudioId": "word-vaca",
+          "stimulusText": "vaca",
+          "choices": [
+            {
+              "id": "c0-boca",
+              "text": "BOCA",
+              "imageId": "boca",
+              "audioId": "word-boca",
+              "correct": false
+            },
+            {
+              "id": "c1-baño",
+              "text": "BAÑO",
+              "imageId": "baño",
+              "audioId": "word-baño",
+              "correct": false
+            },
+            {
+              "id": "c2-leche",
+              "text": "LECHE",
+              "imageId": "leche",
+              "audioId": "word-leche",
+              "correct": false
+            },
+            {
+              "id": "c3-vaca",
+              "text": "VACA",
+              "imageId": "vaca",
+              "audioId": "word-vaca",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c3-vaca"
+          ]
+        },
+        {
+          "id": "taller-letras-l1-a1-read",
+          "type": "read-relate",
+          "skillIds": [
+            "read-vaca"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-read",
+          "difficulty": 1,
+          "hint": "¿Cuál dice vaca?",
+          "hintAudioId": "hint-vaca",
+          "targetText": "VACA",
+          "choices": [
+            {
+              "id": "c0-boca",
+              "text": "BOCA",
+              "imageId": "boca",
+              "correct": false
+            },
+            {
+              "id": "c1-vaca",
+              "text": "VACA",
+              "imageId": "vaca",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c1-vaca"
+          ]
+        },
+        {
+          "id": "taller-letras-l1-a2-build",
+          "type": "build-word",
+          "skillIds": [
+            "write-boca"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-build",
+          "difficulty": 1,
+          "hint": "La palabra completa es boca.",
+          "hintAudioId": "hint-boca",
+          "word": "BOCA",
+          "tiles": [
+            {
+              "id": "t1-oc",
+              "text": "OC"
+            },
+            {
+              "id": "t2-a",
+              "text": "A"
+            },
+            {
+              "id": "tx0-su",
+              "text": "SU"
+            },
+            {
+              "id": "t0-b",
+              "text": "B"
+            }
+          ],
+          "solutionTileIds": [
+            "t0-b",
+            "t1-oc",
+            "t2-a"
+          ],
+          "stimulusAudioId": "word-boca",
+          "imageId": "boca"
+        },
+        {
+          "id": "taller-letras-l1-a3-write",
+          "type": "write-word",
+          "skillIds": [
+            "spell-vaca"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-dictate",
+          "difficulty": 1,
+          "hint": "La palabra es vaca.",
+          "hintAudioId": "hint-vaca",
+          "mode": "dictation",
+          "word": "vaca",
+          "acceptedAnswers": [
+            "vaca",
+            "VACA"
+          ],
+          "stimulusAudioId": "word-vaca",
+          "imageId": "vaca"
+        },
+        {
+          "id": "taller-letras-l1-a8-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "sound-b"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra boca.",
+          "hintAudioId": "hint-boca",
+          "stimulusAudioId": "word-boca",
+          "stimulusText": "boca",
+          "choices": [
+            {
+              "id": "c0-vaca",
+              "text": "VACA",
+              "imageId": "vaca",
+              "audioId": "word-vaca",
+              "correct": false
+            },
+            {
+              "id": "c1-boca",
+              "text": "BOCA",
+              "imageId": "boca",
+              "audioId": "word-boca",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c1-boca"
+          ]
+        },
+        {
+          "id": "taller-letras-l1-a9-build",
+          "type": "build-word",
+          "skillIds": [
+            "write-boca"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-build",
+          "difficulty": 1,
+          "hint": "La palabra completa es boca.",
+          "hintAudioId": "hint-boca",
+          "word": "BOCA",
+          "tiles": [
+            {
+              "id": "t1-oc",
+              "text": "OC"
+            },
+            {
+              "id": "t2-a",
+              "text": "A"
+            },
+            {
+              "id": "tx0-pa",
+              "text": "PA"
+            },
+            {
+              "id": "t0-b",
+              "text": "B"
+            }
+          ],
+          "solutionTileIds": [
+            "t0-b",
+            "t1-oc",
+            "t2-a"
+          ],
+          "stimulusAudioId": "word-boca",
+          "imageId": "boca"
+        }
+      ],
+      "newActivityIds": [
+        "taller-letras-l1-a0-listen",
+        "taller-letras-l1-a1-read",
+        "taller-letras-l1-a2-build",
+        "taller-letras-l1-a3-write"
+      ],
+      "consolidationActivityIds": [
+        "taller-letras-l1-a8-listen",
+        "taller-letras-l1-a9-build"
+      ]
+    },
+    {
+      "id": "taller-letras-l2",
+      "regionId": "taller-letras",
+      "title": "Lección 2",
+      "activities": [
+        {
+          "id": "taller-letras-l2-a0-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "sound-b"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra baño.",
+          "hintAudioId": "hint-baño",
+          "stimulusAudioId": "word-baño",
+          "stimulusText": "baño",
+          "choices": [
+            {
+              "id": "c0-vaca",
+              "text": "VACA",
+              "imageId": "vaca",
+              "audioId": "word-vaca",
+              "correct": false
+            },
+            {
+              "id": "c1-boca",
+              "text": "BOCA",
+              "imageId": "boca",
+              "audioId": "word-boca",
+              "correct": false
+            },
+            {
+              "id": "c2-leche",
+              "text": "LECHE",
+              "imageId": "leche",
+              "audioId": "word-leche",
+              "correct": false
+            },
+            {
+              "id": "c3-baño",
+              "text": "BAÑO",
+              "imageId": "baño",
+              "audioId": "word-baño",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c3-baño"
+          ]
+        },
+        {
+          "id": "taller-letras-l2-a1-read",
+          "type": "read-relate",
+          "skillIds": [
+            "read-baño"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-read",
+          "difficulty": 1,
+          "hint": "¿Cuál dice baño?",
+          "hintAudioId": "hint-baño",
+          "targetText": "BAÑO",
+          "choices": [
+            {
+              "id": "c0-leche",
+              "text": "LECHE",
+              "imageId": "leche",
+              "correct": false
+            },
+            {
+              "id": "c1-vaca",
+              "text": "VACA",
+              "imageId": "vaca",
+              "correct": false
+            },
+            {
+              "id": "c2-baño",
+              "text": "BAÑO",
+              "imageId": "baño",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c2-baño"
+          ]
+        },
+        {
+          "id": "taller-letras-l2-a2-build",
+          "type": "build-word",
+          "skillIds": [
+            "write-leche"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-build",
+          "difficulty": 1,
+          "hint": "La palabra completa es leche.",
+          "hintAudioId": "hint-leche",
+          "word": "LECHE",
+          "tiles": [
+            {
+              "id": "t1-e",
+              "text": "E"
+            },
+            {
+              "id": "t2-c",
+              "text": "C"
+            },
+            {
+              "id": "t3-h",
+              "text": "H"
+            },
+            {
+              "id": "t4-e",
+              "text": "E"
+            },
+            {
+              "id": "tx0-su",
+              "text": "SU"
+            },
+            {
+              "id": "t0-l",
+              "text": "L"
+            }
+          ],
+          "solutionTileIds": [
+            "t0-l",
+            "t1-e",
+            "t2-c",
+            "t3-h",
+            "t4-e"
+          ],
+          "stimulusAudioId": "word-leche",
+          "imageId": "leche"
+        },
+        {
+          "id": "taller-letras-l2-a3-write",
+          "type": "write-word",
+          "skillIds": [
+            "spell-baño"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-dictate",
+          "difficulty": 1,
+          "hint": "La palabra es baño.",
+          "hintAudioId": "hint-baño",
+          "mode": "dictation",
+          "word": "baño",
+          "acceptedAnswers": [
+            "baño",
+            "BAÑO"
+          ],
+          "stimulusAudioId": "word-baño",
+          "imageId": "baño"
+        },
+        {
+          "id": "taller-letras-l2-a8-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "sound-l"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra leche.",
+          "hintAudioId": "hint-leche",
+          "stimulusAudioId": "word-leche",
+          "stimulusText": "leche",
+          "choices": [
+            {
+              "id": "c0-baño",
+              "text": "BAÑO",
+              "imageId": "baño",
+              "audioId": "word-baño",
+              "correct": false
+            },
+            {
+              "id": "c1-leche",
+              "text": "LECHE",
+              "imageId": "leche",
+              "audioId": "word-leche",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c1-leche"
+          ]
+        },
+        {
+          "id": "taller-letras-l2-a9-build",
+          "type": "build-word",
+          "skillIds": [
+            "write-leche"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-build",
+          "difficulty": 1,
+          "hint": "La palabra completa es leche.",
+          "hintAudioId": "hint-leche",
+          "word": "LECHE",
+          "tiles": [
+            {
+              "id": "t1-ec",
+              "text": "EC"
+            },
+            {
+              "id": "t2-h",
+              "text": "H"
+            },
+            {
+              "id": "t3-e",
+              "text": "E"
+            },
+            {
+              "id": "tx0-pa",
+              "text": "PA"
+            },
+            {
+              "id": "t0-l",
+              "text": "L"
+            }
+          ],
+          "solutionTileIds": [
+            "t0-l",
+            "t1-ec",
+            "t2-h",
+            "t3-e"
+          ],
+          "stimulusAudioId": "word-leche",
+          "imageId": "leche"
+        }
+      ],
+      "newActivityIds": [
+        "taller-letras-l2-a0-listen",
+        "taller-letras-l2-a1-read",
+        "taller-letras-l2-a2-build",
+        "taller-letras-l2-a3-write"
+      ],
+      "consolidationActivityIds": [
+        "taller-letras-l2-a8-listen",
+        "taller-letras-l2-a9-build"
+      ]
+    },
+    {
+      "id": "taller-letras-l3",
+      "regionId": "taller-letras",
+      "title": "Lección 3",
+      "activities": [
+        {
+          "id": "taller-letras-l3-a0-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "sound-q"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra queso.",
+          "hintAudioId": "hint-queso",
+          "stimulusAudioId": "word-queso",
+          "stimulusText": "queso",
+          "choices": [
+            {
+              "id": "c0-vaca",
+              "text": "VACA",
+              "imageId": "vaca",
+              "audioId": "word-vaca",
+              "correct": false
+            },
+            {
+              "id": "c1-boca",
+              "text": "BOCA",
+              "imageId": "boca",
+              "audioId": "word-boca",
+              "correct": false
+            },
+            {
+              "id": "c2-baño",
+              "text": "BAÑO",
+              "imageId": "baño",
+              "audioId": "word-baño",
+              "correct": false
+            },
+            {
+              "id": "c3-queso",
+              "text": "QUESO",
+              "imageId": "queso",
+              "audioId": "word-queso",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c3-queso"
+          ]
+        },
+        {
+          "id": "taller-letras-l3-a1-read",
+          "type": "read-relate",
+          "skillIds": [
+            "read-queso"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-read",
+          "difficulty": 1,
+          "hint": "¿Cuál dice queso?",
+          "hintAudioId": "hint-queso",
+          "targetText": "QUESO",
+          "choices": [
+            {
+              "id": "c0-rama",
+              "text": "RAMA",
+              "imageId": "rama",
+              "correct": false
+            },
+            {
+              "id": "c1-vaca",
+              "text": "VACA",
+              "imageId": "vaca",
+              "correct": false
+            },
+            {
+              "id": "c2-queso",
+              "text": "QUESO",
+              "imageId": "queso",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c2-queso"
+          ]
+        },
+        {
+          "id": "taller-letras-l3-a2-build",
+          "type": "build-word",
+          "skillIds": [
+            "write-rama"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-build",
+          "difficulty": 1,
+          "hint": "La palabra completa es rama.",
+          "hintAudioId": "hint-rama",
+          "word": "RAMA",
+          "tiles": [
+            {
+              "id": "t1-am",
+              "text": "AM"
+            },
+            {
+              "id": "t2-a",
+              "text": "A"
+            },
+            {
+              "id": "tx0-su",
+              "text": "SU"
+            },
+            {
+              "id": "t0-r",
+              "text": "R"
+            }
+          ],
+          "solutionTileIds": [
+            "t0-r",
+            "t1-am",
+            "t2-a"
+          ],
+          "stimulusAudioId": "word-rama",
+          "imageId": "rama"
+        },
+        {
+          "id": "taller-letras-l3-a3-write",
+          "type": "write-word",
+          "skillIds": [
+            "spell-queso"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-dictate",
+          "difficulty": 1,
+          "hint": "La palabra es queso.",
+          "hintAudioId": "hint-queso",
+          "mode": "dictation",
+          "word": "queso",
+          "acceptedAnswers": [
+            "queso",
+            "QUESO"
+          ],
+          "stimulusAudioId": "word-queso",
+          "imageId": "queso"
+        },
+        {
+          "id": "taller-letras-l3-a8-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "sound-r"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra rama.",
+          "hintAudioId": "hint-rama",
+          "stimulusAudioId": "word-rama",
+          "stimulusText": "rama",
+          "choices": [
+            {
+              "id": "c0-queso",
+              "text": "QUESO",
+              "imageId": "queso",
+              "audioId": "word-queso",
+              "correct": false
+            },
+            {
+              "id": "c1-rama",
+              "text": "RAMA",
+              "imageId": "rama",
+              "audioId": "word-rama",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c1-rama"
+          ]
+        },
+        {
+          "id": "taller-letras-l3-a9-build",
+          "type": "build-word",
+          "skillIds": [
+            "write-rama"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-build",
+          "difficulty": 1,
+          "hint": "La palabra completa es rama.",
+          "hintAudioId": "hint-rama",
+          "word": "RAMA",
+          "tiles": [
+            {
+              "id": "t1-am",
+              "text": "AM"
+            },
+            {
+              "id": "t2-a",
+              "text": "A"
+            },
+            {
+              "id": "tx0-pa",
+              "text": "PA"
+            },
+            {
+              "id": "t0-r",
+              "text": "R"
+            }
+          ],
+          "solutionTileIds": [
+            "t0-r",
+            "t1-am",
+            "t2-a"
+          ],
+          "stimulusAudioId": "word-rama",
+          "imageId": "rama"
+        }
+      ],
+      "newActivityIds": [
+        "taller-letras-l3-a0-listen",
+        "taller-letras-l3-a1-read",
+        "taller-letras-l3-a2-build",
+        "taller-letras-l3-a3-write"
+      ],
+      "consolidationActivityIds": [
+        "taller-letras-l3-a8-listen",
+        "taller-letras-l3-a9-build"
+      ]
+    },
+    {
+      "id": "taller-letras-l4",
+      "regionId": "taller-letras",
+      "title": "Lección 4",
+      "activities": [
+        {
+          "id": "taller-letras-l4-a0-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "sound-p"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra pera.",
+          "hintAudioId": "hint-pera",
+          "stimulusAudioId": "word-pera",
+          "stimulusText": "pera",
+          "choices": [
+            {
+              "id": "c0-vaca",
+              "text": "VACA",
+              "imageId": "vaca",
+              "audioId": "word-vaca",
+              "correct": false
+            },
+            {
+              "id": "c1-boca",
+              "text": "BOCA",
+              "imageId": "boca",
+              "audioId": "word-boca",
+              "correct": false
+            },
+            {
+              "id": "c2-baño",
+              "text": "BAÑO",
+              "imageId": "baño",
+              "audioId": "word-baño",
+              "correct": false
+            },
+            {
+              "id": "c3-pera",
+              "text": "PERA",
+              "imageId": "pera",
+              "audioId": "word-pera",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c3-pera"
+          ]
+        },
+        {
+          "id": "taller-letras-l4-a1-read",
+          "type": "read-relate",
+          "skillIds": [
+            "read-pera"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-read",
+          "difficulty": 1,
+          "hint": "¿Cuál dice pera?",
+          "hintAudioId": "hint-pera",
+          "targetText": "PERA",
+          "choices": [
+            {
+              "id": "c0-perro",
+              "text": "PERRO",
+              "imageId": "perro",
+              "correct": false
+            },
+            {
+              "id": "c1-vaca",
+              "text": "VACA",
+              "imageId": "vaca",
+              "correct": false
+            },
+            {
+              "id": "c2-pera",
+              "text": "PERA",
+              "imageId": "pera",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c2-pera"
+          ]
+        },
+        {
+          "id": "taller-letras-l4-a2-build",
+          "type": "build-word",
+          "skillIds": [
+            "write-perro"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-build",
+          "difficulty": 1,
+          "hint": "La palabra completa es perro.",
+          "hintAudioId": "hint-perro",
+          "word": "PERRO",
+          "tiles": [
+            {
+              "id": "t1-e",
+              "text": "E"
+            },
+            {
+              "id": "t2-r",
+              "text": "R"
+            },
+            {
+              "id": "t3-r",
+              "text": "R"
+            },
+            {
+              "id": "t4-o",
+              "text": "O"
+            },
+            {
+              "id": "tx0-su",
+              "text": "SU"
+            },
+            {
+              "id": "t0-p",
+              "text": "P"
+            }
+          ],
+          "solutionTileIds": [
+            "t0-p",
+            "t1-e",
+            "t2-r",
+            "t3-r",
+            "t4-o"
+          ],
+          "stimulusAudioId": "word-perro",
+          "imageId": "perro"
+        },
+        {
+          "id": "taller-letras-l4-a3-write",
+          "type": "write-word",
+          "skillIds": [
+            "spell-pera"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-dictate",
+          "difficulty": 1,
+          "hint": "La palabra es pera.",
+          "hintAudioId": "hint-pera",
+          "mode": "dictation",
+          "word": "pera",
+          "acceptedAnswers": [
+            "pera",
+            "PERA"
+          ],
+          "stimulusAudioId": "word-pera",
+          "imageId": "pera"
+        },
+        {
+          "id": "taller-letras-l4-a8-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "sound-p"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra perro.",
+          "hintAudioId": "hint-perro",
+          "stimulusAudioId": "word-perro",
+          "stimulusText": "perro",
+          "choices": [
+            {
+              "id": "c0-pera",
+              "text": "PERA",
+              "imageId": "pera",
+              "audioId": "word-pera",
+              "correct": false
+            },
+            {
+              "id": "c1-perro",
+              "text": "PERRO",
+              "imageId": "perro",
+              "audioId": "word-perro",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c1-perro"
+          ]
+        },
+        {
+          "id": "taller-letras-l4-a9-build",
+          "type": "build-word",
+          "skillIds": [
+            "write-perro"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-build",
+          "difficulty": 1,
+          "hint": "La palabra completa es perro.",
+          "hintAudioId": "hint-perro",
+          "word": "PERRO",
+          "tiles": [
+            {
+              "id": "t1-er",
+              "text": "ER"
+            },
+            {
+              "id": "t2-r",
+              "text": "R"
+            },
+            {
+              "id": "t3-o",
+              "text": "O"
+            },
+            {
+              "id": "tx0-pa",
+              "text": "PA"
+            },
+            {
+              "id": "t0-p",
+              "text": "P"
+            }
+          ],
+          "solutionTileIds": [
+            "t0-p",
+            "t1-er",
+            "t2-r",
+            "t3-o"
+          ],
+          "stimulusAudioId": "word-perro",
+          "imageId": "perro"
+        }
+      ],
+      "newActivityIds": [
+        "taller-letras-l4-a0-listen",
+        "taller-letras-l4-a1-read",
+        "taller-letras-l4-a2-build",
+        "taller-letras-l4-a3-write"
+      ],
+      "consolidationActivityIds": [
+        "taller-letras-l4-a8-listen",
+        "taller-letras-l4-a9-build"
+      ]
+    }
+  ]
+}

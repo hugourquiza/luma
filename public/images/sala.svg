@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="una sala">
+  <rect width="200" height="200" rx="24" fill="#FFF7E6"/>
+  <circle cx="100" cy="110" r="80" fill="#D7CCC8" opacity="0.3"/>
+    <path d="M30 120 L50 95 L150 95 L170 120 Z" fill="#8D6E63"/><path d="M30 120 L170 120 L170 135 L30 135 Z" fill="#E8D5A8"/>
+    <rect x="70" y="90" width="60" height="30" rx="5" fill="#26C6DA"/>
+  
+</svg>

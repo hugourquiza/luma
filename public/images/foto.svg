@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="una foto">
+  <rect width="200" height="200" rx="24" fill="#FFF7E6"/>
+  <circle cx="100" cy="110" r="80" fill="#D7CCC8" opacity="0.3"/>
+    <rect x="50" y="45" width="100" height="90" rx="8" fill="#FFFFFF" stroke="#8D6E63" stroke-width="4"/>
+    <circle cx="90" cy="80" r="14" fill="#FFD54F"/><path d="M50 130 L90 100 L110 118 L130 95 L150 130" fill="#7CB342"/>
+  
+</svg>

@@ -1,0 +1,50 @@
+{
+  "name": "isla-de-las-letras",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "test": "vitest run",
+    "dev": "vite",
+    "build": "node scripts/build-content.ts && node scripts/gen-icons.ts && vite build && node scripts/inject-sw.mjs && node scripts/validate-content.mjs && node scripts/check-budget.mjs",
+    "typecheck": "tsc --noEmit",
+    "preview": "vite preview",
+    "preview:worker": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "test:e2e": "playwright test",
+    "lint": "tsc --noEmit",
+    "validate:content": "node scripts/validate.mjs",
+    "check:budget": "node scripts/check-budget.mjs",
+    "prebuild": "node scripts/build-content.ts",
+    "gen:audio": "node scripts/generate-audio.ts",
+    "gen:manifest": "node scripts/gen-audio-manifest.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "private": "true",
+  "dependencies": {
+    "idb": "8.0.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.49.1",
+    "@testing-library/react": "16.1.0",
+    "@testing-library/user-event": "14.5.2",
+    "@types/node": "22.10.1",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "@vitejs/plugin-react": "4.3.4",
+    "fake-indexeddb": "6.0.0",
+    "jsdom": "25.0.1",
+    "typescript": "5.6.3",
+    "vite": "5.4.14",
+    "vitest": "2.1.8",
+    "wrangler": "^4.10.0"
+  },
+  "allowScripts": {
+    "esbuild@0.21.5": true,
+    "workerd@1.20250409.0": true
+  }
+}

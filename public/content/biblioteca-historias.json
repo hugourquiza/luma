@@ -1,0 +1,1015 @@
+{
+  "id": "biblioteca-historias",
+  "name": "Biblioteca de historias",
+  "color": "library",
+  "skills": [
+    "leer",
+    "comprender"
+  ],
+  "lessons": [
+    {
+      "id": "biblioteca-historias-l1",
+      "regionId": "biblioteca-historias",
+      "title": "Lección 1",
+      "activities": [
+        {
+          "id": "biblioteca-historias-l1-a0-story",
+          "type": "sentence-story",
+          "skillIds": [
+            "leer-frase"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-story",
+          "difficulty": 1,
+          "kind": "order",
+          "sentence": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyText": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyAudioId": "story-luna",
+          "wordTiles": [
+            {
+              "id": "w1",
+              "text": "la"
+            },
+            {
+              "id": "w2",
+              "text": "luna."
+            },
+            {
+              "id": "w3",
+              "text": "La"
+            },
+            {
+              "id": "w4",
+              "text": "luna"
+            },
+            {
+              "id": "w5",
+              "text": "ilumina"
+            },
+            {
+              "id": "w6",
+              "text": "el"
+            },
+            {
+              "id": "w7",
+              "text": "patio."
+            },
+            {
+              "id": "w8",
+              "text": "Mira"
+            },
+            {
+              "id": "w9",
+              "text": "el"
+            },
+            {
+              "id": "w10",
+              "text": "sol"
+            },
+            {
+              "id": "w11",
+              "text": "de"
+            },
+            {
+              "id": "w12",
+              "text": "la"
+            },
+            {
+              "id": "w13",
+              "text": "mañana."
+            },
+            {
+              "id": "w0",
+              "text": "Sale"
+            }
+          ],
+          "solutionWordIds": [
+            "w0",
+            "w1",
+            "w2",
+            "w3",
+            "w4",
+            "w5",
+            "w6",
+            "w7",
+            "w8",
+            "w9",
+            "w10",
+            "w11",
+            "w12",
+            "w13"
+          ]
+        },
+        {
+          "id": "biblioteca-historias-l1-a1-story",
+          "type": "sentence-story",
+          "skillIds": [
+            "comprender"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-story",
+          "difficulty": 1,
+          "kind": "comprehension",
+          "sentence": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyText": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyAudioId": "story-luna",
+          "question": "¿Qué ilumina la luna?",
+          "choices": [
+            {
+              "id": "o0",
+              "text": "el patio",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "text": "la mesa",
+              "correct": false
+            },
+            {
+              "id": "o2",
+              "text": "el oso",
+              "correct": false
+            }
+          ],
+          "correctChoiceIds": [
+            "o0"
+          ]
+        },
+        {
+          "id": "biblioteca-historias-l1-a2-story",
+          "type": "sentence-story",
+          "skillIds": [
+            "leer-frase"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-story",
+          "difficulty": 1,
+          "kind": "write",
+          "sentence": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyText": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyAudioId": "story-luna",
+          "wordToWrite": "patio",
+          "acceptedAnswers": [
+            "patio"
+          ]
+        },
+        {
+          "id": "biblioteca-historias-l1-a3-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "sound-s"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra sol.",
+          "hintAudioId": "hint-sol",
+          "stimulusAudioId": "word-sol",
+          "stimulusText": "sol",
+          "choices": [
+            {
+              "id": "c0-mesa",
+              "text": "MESA",
+              "imageId": "mesa",
+              "audioId": "word-mesa",
+              "correct": false
+            },
+            {
+              "id": "c1-pan",
+              "text": "PAN",
+              "imageId": "pan",
+              "audioId": "word-pan",
+              "correct": false
+            },
+            {
+              "id": "c2-sol",
+              "text": "SOL",
+              "imageId": "sol",
+              "audioId": "word-sol",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c2-sol"
+          ]
+        },
+        {
+          "id": "biblioteca-historias-l1-a8-story",
+          "type": "sentence-story",
+          "skillIds": [
+            "comprender"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-story",
+          "difficulty": 1,
+          "kind": "comprehension",
+          "sentence": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyText": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyAudioId": "story-luna",
+          "question": "¿Qué ilumina la luna?",
+          "choices": [
+            {
+              "id": "o0",
+              "text": "el patio",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "text": "la mesa",
+              "correct": false
+            },
+            {
+              "id": "o2",
+              "text": "el oso",
+              "correct": false
+            }
+          ],
+          "correctChoiceIds": [
+            "o0"
+          ]
+        },
+        {
+          "id": "biblioteca-historias-l1-a9-story",
+          "type": "sentence-story",
+          "skillIds": [
+            "leer-frase"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-story",
+          "difficulty": 1,
+          "kind": "write",
+          "sentence": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyText": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyAudioId": "story-luna",
+          "wordToWrite": "patio",
+          "acceptedAnswers": [
+            "patio"
+          ]
+        }
+      ],
+      "newActivityIds": [
+        "biblioteca-historias-l1-a0-story",
+        "biblioteca-historias-l1-a1-story",
+        "biblioteca-historias-l1-a2-story",
+        "biblioteca-historias-l1-a3-listen"
+      ],
+      "consolidationActivityIds": [
+        "biblioteca-historias-l1-a8-story",
+        "biblioteca-historias-l1-a9-story"
+      ]
+    },
+    {
+      "id": "biblioteca-historias-l2",
+      "regionId": "biblioteca-historias",
+      "title": "Lección 2",
+      "activities": [
+        {
+          "id": "biblioteca-historias-l2-a0-story",
+          "type": "sentence-story",
+          "skillIds": [
+            "leer-frase"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-story",
+          "difficulty": 1,
+          "kind": "order",
+          "sentence": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyText": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyAudioId": "story-luna",
+          "wordTiles": [
+            {
+              "id": "w1",
+              "text": "la"
+            },
+            {
+              "id": "w2",
+              "text": "luna."
+            },
+            {
+              "id": "w3",
+              "text": "La"
+            },
+            {
+              "id": "w4",
+              "text": "luna"
+            },
+            {
+              "id": "w5",
+              "text": "ilumina"
+            },
+            {
+              "id": "w6",
+              "text": "el"
+            },
+            {
+              "id": "w7",
+              "text": "patio."
+            },
+            {
+              "id": "w8",
+              "text": "Mira"
+            },
+            {
+              "id": "w9",
+              "text": "el"
+            },
+            {
+              "id": "w10",
+              "text": "sol"
+            },
+            {
+              "id": "w11",
+              "text": "de"
+            },
+            {
+              "id": "w12",
+              "text": "la"
+            },
+            {
+              "id": "w13",
+              "text": "mañana."
+            },
+            {
+              "id": "w0",
+              "text": "Sale"
+            }
+          ],
+          "solutionWordIds": [
+            "w0",
+            "w1",
+            "w2",
+            "w3",
+            "w4",
+            "w5",
+            "w6",
+            "w7",
+            "w8",
+            "w9",
+            "w10",
+            "w11",
+            "w12",
+            "w13"
+          ]
+        },
+        {
+          "id": "biblioteca-historias-l2-a1-story",
+          "type": "sentence-story",
+          "skillIds": [
+            "comprender"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-story",
+          "difficulty": 1,
+          "kind": "comprehension",
+          "sentence": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyText": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyAudioId": "story-luna",
+          "question": "¿Qué ilumina la luna?",
+          "choices": [
+            {
+              "id": "o0",
+              "text": "el patio",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "text": "la mesa",
+              "correct": false
+            },
+            {
+              "id": "o2",
+              "text": "el oso",
+              "correct": false
+            }
+          ],
+          "correctChoiceIds": [
+            "o0"
+          ]
+        },
+        {
+          "id": "biblioteca-historias-l2-a2-story",
+          "type": "sentence-story",
+          "skillIds": [
+            "leer-frase"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-story",
+          "difficulty": 1,
+          "kind": "write",
+          "sentence": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyText": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyAudioId": "story-luna",
+          "wordToWrite": "patio",
+          "acceptedAnswers": [
+            "patio"
+          ]
+        },
+        {
+          "id": "biblioteca-historias-l2-a3-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "sound-s"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra sol.",
+          "hintAudioId": "hint-sol",
+          "stimulusAudioId": "word-sol",
+          "stimulusText": "sol",
+          "choices": [
+            {
+              "id": "c0-mesa",
+              "text": "MESA",
+              "imageId": "mesa",
+              "audioId": "word-mesa",
+              "correct": false
+            },
+            {
+              "id": "c1-pan",
+              "text": "PAN",
+              "imageId": "pan",
+              "audioId": "word-pan",
+              "correct": false
+            },
+            {
+              "id": "c2-sol",
+              "text": "SOL",
+              "imageId": "sol",
+              "audioId": "word-sol",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c2-sol"
+          ]
+        },
+        {
+          "id": "biblioteca-historias-l2-a8-story",
+          "type": "sentence-story",
+          "skillIds": [
+            "comprender"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-story",
+          "difficulty": 1,
+          "kind": "comprehension",
+          "sentence": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyText": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyAudioId": "story-luna",
+          "question": "¿Qué ilumina la luna?",
+          "choices": [
+            {
+              "id": "o0",
+              "text": "el patio",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "text": "la mesa",
+              "correct": false
+            },
+            {
+              "id": "o2",
+              "text": "el oso",
+              "correct": false
+            }
+          ],
+          "correctChoiceIds": [
+            "o0"
+          ]
+        },
+        {
+          "id": "biblioteca-historias-l2-a9-story",
+          "type": "sentence-story",
+          "skillIds": [
+            "leer-frase"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-story",
+          "difficulty": 1,
+          "kind": "write",
+          "sentence": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyText": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyAudioId": "story-luna",
+          "wordToWrite": "patio",
+          "acceptedAnswers": [
+            "patio"
+          ]
+        }
+      ],
+      "newActivityIds": [
+        "biblioteca-historias-l2-a0-story",
+        "biblioteca-historias-l2-a1-story",
+        "biblioteca-historias-l2-a2-story",
+        "biblioteca-historias-l2-a3-listen"
+      ],
+      "consolidationActivityIds": [
+        "biblioteca-historias-l2-a8-story",
+        "biblioteca-historias-l2-a9-story"
+      ]
+    },
+    {
+      "id": "biblioteca-historias-l3",
+      "regionId": "biblioteca-historias",
+      "title": "Lección 3",
+      "activities": [
+        {
+          "id": "biblioteca-historias-l3-a0-story",
+          "type": "sentence-story",
+          "skillIds": [
+            "leer-frase"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-story",
+          "difficulty": 1,
+          "kind": "order",
+          "sentence": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyText": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyAudioId": "story-luna",
+          "wordTiles": [
+            {
+              "id": "w1",
+              "text": "la"
+            },
+            {
+              "id": "w2",
+              "text": "luna."
+            },
+            {
+              "id": "w3",
+              "text": "La"
+            },
+            {
+              "id": "w4",
+              "text": "luna"
+            },
+            {
+              "id": "w5",
+              "text": "ilumina"
+            },
+            {
+              "id": "w6",
+              "text": "el"
+            },
+            {
+              "id": "w7",
+              "text": "patio."
+            },
+            {
+              "id": "w8",
+              "text": "Mira"
+            },
+            {
+              "id": "w9",
+              "text": "el"
+            },
+            {
+              "id": "w10",
+              "text": "sol"
+            },
+            {
+              "id": "w11",
+              "text": "de"
+            },
+            {
+              "id": "w12",
+              "text": "la"
+            },
+            {
+              "id": "w13",
+              "text": "mañana."
+            },
+            {
+              "id": "w0",
+              "text": "Sale"
+            }
+          ],
+          "solutionWordIds": [
+            "w0",
+            "w1",
+            "w2",
+            "w3",
+            "w4",
+            "w5",
+            "w6",
+            "w7",
+            "w8",
+            "w9",
+            "w10",
+            "w11",
+            "w12",
+            "w13"
+          ]
+        },
+        {
+          "id": "biblioteca-historias-l3-a1-story",
+          "type": "sentence-story",
+          "skillIds": [
+            "comprender"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-story",
+          "difficulty": 1,
+          "kind": "comprehension",
+          "sentence": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyText": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyAudioId": "story-luna",
+          "question": "¿Qué ilumina la luna?",
+          "choices": [
+            {
+              "id": "o0",
+              "text": "el patio",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "text": "la mesa",
+              "correct": false
+            },
+            {
+              "id": "o2",
+              "text": "el oso",
+              "correct": false
+            }
+          ],
+          "correctChoiceIds": [
+            "o0"
+          ]
+        },
+        {
+          "id": "biblioteca-historias-l3-a2-story",
+          "type": "sentence-story",
+          "skillIds": [
+            "leer-frase"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-story",
+          "difficulty": 1,
+          "kind": "write",
+          "sentence": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyText": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyAudioId": "story-luna",
+          "wordToWrite": "patio",
+          "acceptedAnswers": [
+            "patio"
+          ]
+        },
+        {
+          "id": "biblioteca-historias-l3-a3-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "sound-s"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra sol.",
+          "hintAudioId": "hint-sol",
+          "stimulusAudioId": "word-sol",
+          "stimulusText": "sol",
+          "choices": [
+            {
+              "id": "c0-mesa",
+              "text": "MESA",
+              "imageId": "mesa",
+              "audioId": "word-mesa",
+              "correct": false
+            },
+            {
+              "id": "c1-pan",
+              "text": "PAN",
+              "imageId": "pan",
+              "audioId": "word-pan",
+              "correct": false
+            },
+            {
+              "id": "c2-sol",
+              "text": "SOL",
+              "imageId": "sol",
+              "audioId": "word-sol",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c2-sol"
+          ]
+        },
+        {
+          "id": "biblioteca-historias-l3-a8-story",
+          "type": "sentence-story",
+          "skillIds": [
+            "comprender"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-story",
+          "difficulty": 1,
+          "kind": "comprehension",
+          "sentence": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyText": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyAudioId": "story-luna",
+          "question": "¿Qué ilumina la luna?",
+          "choices": [
+            {
+              "id": "o0",
+              "text": "el patio",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "text": "la mesa",
+              "correct": false
+            },
+            {
+              "id": "o2",
+              "text": "el oso",
+              "correct": false
+            }
+          ],
+          "correctChoiceIds": [
+            "o0"
+          ]
+        },
+        {
+          "id": "biblioteca-historias-l3-a9-story",
+          "type": "sentence-story",
+          "skillIds": [
+            "leer-frase"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-story",
+          "difficulty": 1,
+          "kind": "write",
+          "sentence": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyText": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyAudioId": "story-luna",
+          "wordToWrite": "patio",
+          "acceptedAnswers": [
+            "patio"
+          ]
+        }
+      ],
+      "newActivityIds": [
+        "biblioteca-historias-l3-a0-story",
+        "biblioteca-historias-l3-a1-story",
+        "biblioteca-historias-l3-a2-story",
+        "biblioteca-historias-l3-a3-listen"
+      ],
+      "consolidationActivityIds": [
+        "biblioteca-historias-l3-a8-story",
+        "biblioteca-historias-l3-a9-story"
+      ]
+    },
+    {
+      "id": "biblioteca-historias-l4",
+      "regionId": "biblioteca-historias",
+      "title": "Lección 4",
+      "activities": [
+        {
+          "id": "biblioteca-historias-l4-a0-story",
+          "type": "sentence-story",
+          "skillIds": [
+            "leer-frase"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-story",
+          "difficulty": 1,
+          "kind": "order",
+          "sentence": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyText": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyAudioId": "story-luna",
+          "wordTiles": [
+            {
+              "id": "w1",
+              "text": "la"
+            },
+            {
+              "id": "w2",
+              "text": "luna."
+            },
+            {
+              "id": "w3",
+              "text": "La"
+            },
+            {
+              "id": "w4",
+              "text": "luna"
+            },
+            {
+              "id": "w5",
+              "text": "ilumina"
+            },
+            {
+              "id": "w6",
+              "text": "el"
+            },
+            {
+              "id": "w7",
+              "text": "patio."
+            },
+            {
+              "id": "w8",
+              "text": "Mira"
+            },
+            {
+              "id": "w9",
+              "text": "el"
+            },
+            {
+              "id": "w10",
+              "text": "sol"
+            },
+            {
+              "id": "w11",
+              "text": "de"
+            },
+            {
+              "id": "w12",
+              "text": "la"
+            },
+            {
+              "id": "w13",
+              "text": "mañana."
+            },
+            {
+              "id": "w0",
+              "text": "Sale"
+            }
+          ],
+          "solutionWordIds": [
+            "w0",
+            "w1",
+            "w2",
+            "w3",
+            "w4",
+            "w5",
+            "w6",
+            "w7",
+            "w8",
+            "w9",
+            "w10",
+            "w11",
+            "w12",
+            "w13"
+          ]
+        },
+        {
+          "id": "biblioteca-historias-l4-a1-story",
+          "type": "sentence-story",
+          "skillIds": [
+            "comprender"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-story",
+          "difficulty": 1,
+          "kind": "comprehension",
+          "sentence": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyText": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyAudioId": "story-luna",
+          "question": "¿Qué ilumina la luna?",
+          "choices": [
+            {
+              "id": "o0",
+              "text": "el patio",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "text": "la mesa",
+              "correct": false
+            },
+            {
+              "id": "o2",
+              "text": "el oso",
+              "correct": false
+            }
+          ],
+          "correctChoiceIds": [
+            "o0"
+          ]
+        },
+        {
+          "id": "biblioteca-historias-l4-a2-story",
+          "type": "sentence-story",
+          "skillIds": [
+            "leer-frase"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-story",
+          "difficulty": 1,
+          "kind": "write",
+          "sentence": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyText": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyAudioId": "story-luna",
+          "wordToWrite": "patio",
+          "acceptedAnswers": [
+            "patio"
+          ]
+        },
+        {
+          "id": "biblioteca-historias-l4-a3-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "sound-s"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra sol.",
+          "hintAudioId": "hint-sol",
+          "stimulusAudioId": "word-sol",
+          "stimulusText": "sol",
+          "choices": [
+            {
+              "id": "c0-mesa",
+              "text": "MESA",
+              "imageId": "mesa",
+              "audioId": "word-mesa",
+              "correct": false
+            },
+            {
+              "id": "c1-pan",
+              "text": "PAN",
+              "imageId": "pan",
+              "audioId": "word-pan",
+              "correct": false
+            },
+            {
+              "id": "c2-sol",
+              "text": "SOL",
+              "imageId": "sol",
+              "audioId": "word-sol",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c2-sol"
+          ]
+        },
+        {
+          "id": "biblioteca-historias-l4-a8-story",
+          "type": "sentence-story",
+          "skillIds": [
+            "comprender"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-story",
+          "difficulty": 1,
+          "kind": "comprehension",
+          "sentence": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyText": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyAudioId": "story-luna",
+          "question": "¿Qué ilumina la luna?",
+          "choices": [
+            {
+              "id": "o0",
+              "text": "el patio",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "text": "la mesa",
+              "correct": false
+            },
+            {
+              "id": "o2",
+              "text": "el oso",
+              "correct": false
+            }
+          ],
+          "correctChoiceIds": [
+            "o0"
+          ]
+        },
+        {
+          "id": "biblioteca-historias-l4-a9-story",
+          "type": "sentence-story",
+          "skillIds": [
+            "leer-frase"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-story",
+          "difficulty": 1,
+          "kind": "write",
+          "sentence": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyText": "Sale la luna. La luna ilumina el patio. Mira el sol de la mañana.",
+          "storyAudioId": "story-luna",
+          "wordToWrite": "patio",
+          "acceptedAnswers": [
+            "patio"
+          ]
+        }
+      ],
+      "newActivityIds": [
+        "biblioteca-historias-l4-a0-story",
+        "biblioteca-historias-l4-a1-story",
+        "biblioteca-historias-l4-a2-story",
+        "biblioteca-historias-l4-a3-listen"
+      ],
+      "consolidationActivityIds": [
+        "biblioteca-historias-l4-a8-story",
+        "biblioteca-historias-l4-a9-story"
+      ]
+    }
+  ]
+}

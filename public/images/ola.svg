@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="una ola">
+  <rect width="200" height="200" rx="24" fill="#FFF7E6"/>
+  <circle cx="100" cy="110" r="80" fill="#D7CCC8" opacity="0.3"/>
+    <path d="M20 120 Q 55 85 90 120 T 160 120 T 190 120" fill="none" stroke="#26C6DA" stroke-width="0"/>
+    <path d="M20 140 Q 60 95 100 140 T 180 140" fill="none" stroke="#1A9FB2" stroke-width="18" stroke-linecap="round"/>
+    <path d="M40 110 Q 75 70 110 110 T 175 110" fill="none" stroke="#26C6DA" stroke-width="14" stroke-linecap="round"/>
+  
+</svg>

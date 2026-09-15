@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="un pato">
+  <rect width="200" height="200" rx="24" fill="#FFF7E6"/>
+  <circle cx="100" cy="110" r="80" fill="#D7CCC8" opacity="0.3"/>
+    <ellipse cx="100" cy="135" rx="45" ry="30" fill="#FFD54F"/>
+    <circle cx="140" cy="108" r="22" fill="#FFD54F"/>
+    <ellipse cx="160" cy="116" rx="16" ry="10" fill="#FF6F61"/>
+    <circle cx="147" cy="102" r="4" fill="#3E2723"/>
+  
+</svg>

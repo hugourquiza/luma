@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="un mapa">
+  <rect width="200" height="200" rx="24" fill="#FFF7E6"/>
+  <circle cx="100" cy="110" r="80" fill="#D7CCC8" opacity="0.3"/>
+    <rect x="45" y="40" width="110" height="70" rx="6" fill="#E8D5A8" stroke="#8D6E63" stroke-width="4"/>
+    <path d="M60 55 L120 85" stroke="#5E8430" stroke-width="4" stroke-dasharray="6 4"/>
+    <circle cx="130" cy="65" r="6" fill="#FF6F61"/>
+    <text x="100" y="150" text-anchor="middle" font-size="22" fill="#3E2723">Mapa</text>
+  
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="una elefante, el ele">
+  <rect width="200" height="200" rx="24" fill="#FFF7E6"/>
+  <circle cx="100" cy="110" r="80" fill="#D7CCC8" opacity="0.3"/>
+    <ellipse cx="100" cy="120" rx="55" ry="48" fill="#90A4AE"/>
+    <ellipse cx="100" cy="120" rx="28" ry="26" fill="#B0BEC5"/>
+    <circle cx="85" cy="105" r="6" fill="#3E2723"/><circle cx="115" cy="105" r="6" fill="#3E2723"/>
+    <path d="M100 118 Q 130 130 118 165" fill="#90A4AE" stroke="#90A4AE" stroke-width="10" stroke-linecap="round"/>
+  
+</svg>

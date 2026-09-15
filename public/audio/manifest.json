@@ -1,0 +1,571 @@
+{
+  "version": 2,
+  "generatedAt": 1789424626195,
+  "total": 94,
+  "audios": [
+    {
+      "id": "hint-ala",
+      "path": "audio/hint-ala.mp3",
+      "sizeBytes": 13104,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-baño",
+      "path": "audio/hint-baño.mp3",
+      "sizeBytes": 13248,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-boca",
+      "path": "audio/hint-boca.mp3",
+      "sizeBytes": 13104,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-dado",
+      "path": "audio/hint-dado.mp3",
+      "sizeBytes": 13104,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-ele",
+      "path": "audio/hint-ele.mp3",
+      "sizeBytes": 12816,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-foto",
+      "path": "audio/hint-foto.mp3",
+      "sizeBytes": 12960,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-leche",
+      "path": "audio/hint-leche.mp3",
+      "sizeBytes": 13680,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-letter-A",
+      "path": "audio/hint-letter-A.mp3",
+      "sizeBytes": 13248,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-letter-E",
+      "path": "audio/hint-letter-E.mp3",
+      "sizeBytes": 13536,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-letter-I",
+      "path": "audio/hint-letter-I.mp3",
+      "sizeBytes": 13248,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-letter-O",
+      "path": "audio/hint-letter-O.mp3",
+      "sizeBytes": 13248,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-letter-U",
+      "path": "audio/hint-letter-U.mp3",
+      "sizeBytes": 12816,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-letter-b",
+      "path": "audio/hint-letter-b.mp3",
+      "sizeBytes": 13392,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-letter-c",
+      "path": "audio/hint-letter-c.mp3",
+      "sizeBytes": 13248,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-letter-ch",
+      "path": "audio/hint-letter-ch.mp3",
+      "sizeBytes": 13536,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-letter-d",
+      "path": "audio/hint-letter-d.mp3",
+      "sizeBytes": 13104,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-letter-f",
+      "path": "audio/hint-letter-f.mp3",
+      "sizeBytes": 14400,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-letter-l",
+      "path": "audio/hint-letter-l.mp3",
+      "sizeBytes": 14256,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-letter-m",
+      "path": "audio/hint-letter-m.mp3",
+      "sizeBytes": 14256,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-letter-n",
+      "path": "audio/hint-letter-n.mp3",
+      "sizeBytes": 14256,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-letter-p",
+      "path": "audio/hint-letter-p.mp3",
+      "sizeBytes": 13248,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-letter-q",
+      "path": "audio/hint-letter-q.mp3",
+      "sizeBytes": 12960,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-letter-r",
+      "path": "audio/hint-letter-r.mp3",
+      "sizeBytes": 14112,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-letter-s",
+      "path": "audio/hint-letter-s.mp3",
+      "sizeBytes": 14400,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-letter-t",
+      "path": "audio/hint-letter-t.mp3",
+      "sizeBytes": 13392,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-letter-v",
+      "path": "audio/hint-letter-v.mp3",
+      "sizeBytes": 13824,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-letter-ñ",
+      "path": "audio/hint-letter-ñ.mp3",
+      "sizeBytes": 14256,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-luna",
+      "path": "audio/hint-luna.mp3",
+      "sizeBytes": 13248,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-lupa",
+      "path": "audio/hint-lupa.mp3",
+      "sizeBytes": 12816,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-mapa",
+      "path": "audio/hint-mapa.mp3",
+      "sizeBytes": 13392,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-mesa",
+      "path": "audio/hint-mesa.mp3",
+      "sizeBytes": 13536,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-nata",
+      "path": "audio/hint-nata.mp3",
+      "sizeBytes": 13536,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-ojo",
+      "path": "audio/hint-ojo.mp3",
+      "sizeBytes": 13248,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-ola",
+      "path": "audio/hint-ola.mp3",
+      "sizeBytes": 12816,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-oso",
+      "path": "audio/hint-oso.mp3",
+      "sizeBytes": 13392,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-pala",
+      "path": "audio/hint-pala.mp3",
+      "sizeBytes": 13104,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-pan",
+      "path": "audio/hint-pan.mp3",
+      "sizeBytes": 12528,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-patio",
+      "path": "audio/hint-patio.mp3",
+      "sizeBytes": 13392,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-pato",
+      "path": "audio/hint-pato.mp3",
+      "sizeBytes": 13104,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-pera",
+      "path": "audio/hint-pera.mp3",
+      "sizeBytes": 13248,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-perro",
+      "path": "audio/hint-perro.mp3",
+      "sizeBytes": 13392,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-queso",
+      "path": "audio/hint-queso.mp3",
+      "sizeBytes": 13536,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-rama",
+      "path": "audio/hint-rama.mp3",
+      "sizeBytes": 13104,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-sala",
+      "path": "audio/hint-sala.mp3",
+      "sizeBytes": 12816,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-sapo",
+      "path": "audio/hint-sapo.mp3",
+      "sizeBytes": 12960,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-sol",
+      "path": "audio/hint-sol.mp3",
+      "sizeBytes": 12240,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-sopa",
+      "path": "audio/hint-sopa.mp3",
+      "sizeBytes": 12960,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-suma",
+      "path": "audio/hint-suma.mp3",
+      "sizeBytes": 12960,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-tela",
+      "path": "audio/hint-tela.mp3",
+      "sizeBytes": 13104,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-una",
+      "path": "audio/hint-una.mp3",
+      "sizeBytes": 12816,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-uno",
+      "path": "audio/hint-uno.mp3",
+      "sizeBytes": 12960,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-uva",
+      "path": "audio/hint-uva.mp3",
+      "sizeBytes": 13248,
+      "review": "pending-human"
+    },
+    {
+      "id": "hint-vaca",
+      "path": "audio/hint-vaca.mp3",
+      "sizeBytes": 13248,
+      "review": "pending-human"
+    },
+    {
+      "id": "instruction-build",
+      "path": "audio/instruction-build.mp3",
+      "sizeBytes": 19008,
+      "review": "pending-human"
+    },
+    {
+      "id": "instruction-dictate",
+      "path": "audio/instruction-dictate.mp3",
+      "sizeBytes": 16704,
+      "review": "pending-human"
+    },
+    {
+      "id": "instruction-listen",
+      "path": "audio/instruction-listen.mp3",
+      "sizeBytes": 19584,
+      "review": "pending-human"
+    },
+    {
+      "id": "instruction-read",
+      "path": "audio/instruction-read.mp3",
+      "sizeBytes": 20304,
+      "review": "pending-human"
+    },
+    {
+      "id": "instruction-story",
+      "path": "audio/instruction-story.mp3",
+      "sizeBytes": 16416,
+      "review": "pending-human"
+    },
+    {
+      "id": "instruction-trace",
+      "path": "audio/instruction-trace.mp3",
+      "sizeBytes": 15984,
+      "review": "pending-human"
+    },
+    {
+      "id": "instruction-write-copy",
+      "path": "audio/instruction-write-copy.mp3",
+      "sizeBytes": 12384,
+      "review": "pending-human"
+    },
+    {
+      "id": "story-luna",
+      "path": "audio/story-luna.mp3",
+      "sizeBytes": 39744,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-ala",
+      "path": "audio/word-ala.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-baño",
+      "path": "audio/word-baño.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-boca",
+      "path": "audio/word-boca.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-dado",
+      "path": "audio/word-dado.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-ele",
+      "path": "audio/word-ele.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-foto",
+      "path": "audio/word-foto.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-leche",
+      "path": "audio/word-leche.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-luna",
+      "path": "audio/word-luna.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-lupa",
+      "path": "audio/word-lupa.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-mapa",
+      "path": "audio/word-mapa.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-mesa",
+      "path": "audio/word-mesa.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-nata",
+      "path": "audio/word-nata.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-ojo",
+      "path": "audio/word-ojo.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-ola",
+      "path": "audio/word-ola.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-oso",
+      "path": "audio/word-oso.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-pala",
+      "path": "audio/word-pala.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-pan",
+      "path": "audio/word-pan.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-patio",
+      "path": "audio/word-patio.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-pato",
+      "path": "audio/word-pato.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-pera",
+      "path": "audio/word-pera.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-perro",
+      "path": "audio/word-perro.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-queso",
+      "path": "audio/word-queso.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-rama",
+      "path": "audio/word-rama.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-sala",
+      "path": "audio/word-sala.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-sapo",
+      "path": "audio/word-sapo.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-sol",
+      "path": "audio/word-sol.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-sopa",
+      "path": "audio/word-sopa.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-suma",
+      "path": "audio/word-suma.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-tela",
+      "path": "audio/word-tela.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-una",
+      "path": "audio/word-una.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-uno",
+      "path": "audio/word-uno.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-uva",
+      "path": "audio/word-uva.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    },
+    {
+      "id": "word-vaca",
+      "path": "audio/word-vaca.mp3",
+      "sizeBytes": 11232,
+      "review": "pending-human"
+    }
+  ]
+}

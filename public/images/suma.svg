@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="una suma">
+  <rect width="200" height="200" rx="24" fill="#FFF7E6"/>
+  <circle cx="100" cy="110" r="80" fill="#D7CCC8" opacity="0.3"/>
+    <text x="100" y="90" text-anchor="middle" font-size="64" font-weight="bold" fill="#FF6F61">1+1</text>
+    <rect x="82" y="115" width="36" height="8" rx="4" fill="#FFD54F"/>
+  
+</svg>

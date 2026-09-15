@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="un ojo">
+  <rect width="200" height="200" rx="24" fill="#FFF7E6"/>
+  <circle cx="100" cy="110" r="80" fill="#D7CCC8" opacity="0.3"/>
+    <ellipse cx="100" cy="110" rx="65" ry="40" fill="#FFFFFF" stroke="#3E2723" stroke-width="4"/>
+    <circle cx="100" cy="115" r="26" fill="#26C6DA"/>
+    <circle cx="100" cy="115" r="12" fill="#3E2723"/>
+    <circle cx="108" cy="106" r="4" fill="#FFFFFF"/>
+  
+</svg>

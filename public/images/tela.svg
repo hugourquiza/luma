@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="una tela">
+  <rect width="200" height="200" rx="24" fill="#FFF7E6"/>
+  <circle cx="100" cy="110" r="80" fill="#D7CCC8" opacity="0.3"/>
+    <path d="M50 40 L100 25 L150 40 L150 160 L50 160 Z" fill="#CE93D8" opacity="0.4"/>
+    <path d="M55 45 L145 45 L135 160 L65 160 Z" fill="#CE93D8" opacity="0.7"/>
+    <path d="M50 40 L130 160 M150 40 L70 160" stroke="#3E2723" stroke-width="3" opacity="0.5"/>
+  
+</svg>

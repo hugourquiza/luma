@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="una pera">
+  <rect width="200" height="200" rx="24" fill="#FFF7E6"/>
+  <circle cx="100" cy="110" r="80" fill="#D7CCC8" opacity="0.3"/>
+    <circle cx="110" cy="120" r="40" fill="#7CB342"/>
+    <path d="M100 85 Q 110 55 108 40" fill="none" stroke="#8D6E63" stroke-width="6"/>
+    <ellipse cx="96" cy="130" rx="12" ry="18" fill="#5E8430"/>
+  
+</svg>

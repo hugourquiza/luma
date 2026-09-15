@@ -1,0 +1,933 @@
+{
+  "id": "bosque-sonidos",
+  "name": "Bosque de los sonidos",
+  "color": "forest",
+  "skills": [
+    "m",
+    "p",
+    "l",
+    "s"
+  ],
+  "lessons": [
+    {
+      "id": "bosque-sonidos-l1",
+      "regionId": "bosque-sonidos",
+      "title": "Lección 1",
+      "activities": [
+        {
+          "id": "bosque-sonidos-l1-a0-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "sound-m"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra mapa.",
+          "hintAudioId": "hint-mapa",
+          "stimulusAudioId": "word-mapa",
+          "stimulusText": "mapa",
+          "choices": [
+            {
+              "id": "c0-pala",
+              "text": "PALA",
+              "imageId": "pala",
+              "audioId": "word-pala",
+              "correct": false
+            },
+            {
+              "id": "c1-mesa",
+              "text": "MESA",
+              "imageId": "mesa",
+              "audioId": "word-mesa",
+              "correct": false
+            },
+            {
+              "id": "c2-lupa",
+              "text": "LUPA",
+              "imageId": "lupa",
+              "audioId": "word-lupa",
+              "correct": false
+            },
+            {
+              "id": "c3-mapa",
+              "text": "MAPA",
+              "imageId": "mapa",
+              "audioId": "word-mapa",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c3-mapa"
+          ]
+        },
+        {
+          "id": "bosque-sonidos-l1-a1-read",
+          "type": "read-relate",
+          "skillIds": [
+            "read-mapa"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-read",
+          "difficulty": 1,
+          "hint": "¿Cuál dice mapa?",
+          "hintAudioId": "hint-mapa",
+          "targetText": "MAPA",
+          "choices": [
+            {
+              "id": "c0-pala",
+              "text": "PALA",
+              "imageId": "pala",
+              "correct": false
+            },
+            {
+              "id": "c1-mapa",
+              "text": "MAPA",
+              "imageId": "mapa",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c1-mapa"
+          ]
+        },
+        {
+          "id": "bosque-sonidos-l1-a2-build",
+          "type": "build-word",
+          "skillIds": [
+            "write-pala"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-build",
+          "difficulty": 1,
+          "hint": "La palabra completa es pala.",
+          "hintAudioId": "hint-pala",
+          "word": "PALA",
+          "tiles": [
+            {
+              "id": "t1-al",
+              "text": "AL"
+            },
+            {
+              "id": "t2-a",
+              "text": "A"
+            },
+            {
+              "id": "tx0-su",
+              "text": "SU"
+            },
+            {
+              "id": "t0-p",
+              "text": "P"
+            }
+          ],
+          "solutionTileIds": [
+            "t0-p",
+            "t1-al",
+            "t2-a"
+          ],
+          "stimulusAudioId": "word-pala",
+          "imageId": "pala"
+        },
+        {
+          "id": "bosque-sonidos-l1-a3-write",
+          "type": "write-word",
+          "skillIds": [
+            "spell-mapa"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-dictate",
+          "difficulty": 1,
+          "hint": "La palabra es mapa.",
+          "hintAudioId": "hint-mapa",
+          "mode": "dictation",
+          "word": "mapa",
+          "acceptedAnswers": [
+            "mapa",
+            "MAPA"
+          ],
+          "stimulusAudioId": "word-mapa",
+          "imageId": "mapa"
+        },
+        {
+          "id": "bosque-sonidos-l1-a8-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "sound-p"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra pala.",
+          "hintAudioId": "hint-pala",
+          "stimulusAudioId": "word-pala",
+          "stimulusText": "pala",
+          "choices": [
+            {
+              "id": "c0-mapa",
+              "text": "MAPA",
+              "imageId": "mapa",
+              "audioId": "word-mapa",
+              "correct": false
+            },
+            {
+              "id": "c1-pala",
+              "text": "PALA",
+              "imageId": "pala",
+              "audioId": "word-pala",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c1-pala"
+          ]
+        },
+        {
+          "id": "bosque-sonidos-l1-a9-build",
+          "type": "build-word",
+          "skillIds": [
+            "write-pala"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-build",
+          "difficulty": 1,
+          "hint": "La palabra completa es pala.",
+          "hintAudioId": "hint-pala",
+          "word": "PALA",
+          "tiles": [
+            {
+              "id": "t1-al",
+              "text": "AL"
+            },
+            {
+              "id": "t2-a",
+              "text": "A"
+            },
+            {
+              "id": "tx0-pa",
+              "text": "PA"
+            },
+            {
+              "id": "t0-p",
+              "text": "P"
+            }
+          ],
+          "solutionTileIds": [
+            "t0-p",
+            "t1-al",
+            "t2-a"
+          ],
+          "stimulusAudioId": "word-pala",
+          "imageId": "pala"
+        }
+      ],
+      "newActivityIds": [
+        "bosque-sonidos-l1-a0-listen",
+        "bosque-sonidos-l1-a1-read",
+        "bosque-sonidos-l1-a2-build",
+        "bosque-sonidos-l1-a3-write"
+      ],
+      "consolidationActivityIds": [
+        "bosque-sonidos-l1-a8-listen",
+        "bosque-sonidos-l1-a9-build"
+      ]
+    },
+    {
+      "id": "bosque-sonidos-l2",
+      "regionId": "bosque-sonidos",
+      "title": "Lección 2",
+      "activities": [
+        {
+          "id": "bosque-sonidos-l2-a0-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "sound-m"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra mesa.",
+          "hintAudioId": "hint-mesa",
+          "stimulusAudioId": "word-mesa",
+          "stimulusText": "mesa",
+          "choices": [
+            {
+              "id": "c0-mapa",
+              "text": "MAPA",
+              "imageId": "mapa",
+              "audioId": "word-mapa",
+              "correct": false
+            },
+            {
+              "id": "c1-pala",
+              "text": "PALA",
+              "imageId": "pala",
+              "audioId": "word-pala",
+              "correct": false
+            },
+            {
+              "id": "c2-lupa",
+              "text": "LUPA",
+              "imageId": "lupa",
+              "audioId": "word-lupa",
+              "correct": false
+            },
+            {
+              "id": "c3-mesa",
+              "text": "MESA",
+              "imageId": "mesa",
+              "audioId": "word-mesa",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c3-mesa"
+          ]
+        },
+        {
+          "id": "bosque-sonidos-l2-a1-read",
+          "type": "read-relate",
+          "skillIds": [
+            "read-mesa"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-read",
+          "difficulty": 1,
+          "hint": "¿Cuál dice mesa?",
+          "hintAudioId": "hint-mesa",
+          "targetText": "MESA",
+          "choices": [
+            {
+              "id": "c0-lupa",
+              "text": "LUPA",
+              "imageId": "lupa",
+              "correct": false
+            },
+            {
+              "id": "c1-mapa",
+              "text": "MAPA",
+              "imageId": "mapa",
+              "correct": false
+            },
+            {
+              "id": "c2-mesa",
+              "text": "MESA",
+              "imageId": "mesa",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c2-mesa"
+          ]
+        },
+        {
+          "id": "bosque-sonidos-l2-a2-build",
+          "type": "build-word",
+          "skillIds": [
+            "write-lupa"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-build",
+          "difficulty": 1,
+          "hint": "La palabra completa es lupa.",
+          "hintAudioId": "hint-lupa",
+          "word": "LUPA",
+          "tiles": [
+            {
+              "id": "t1-u",
+              "text": "U"
+            },
+            {
+              "id": "t2-p",
+              "text": "P"
+            },
+            {
+              "id": "t3-a",
+              "text": "A"
+            },
+            {
+              "id": "tx0-su",
+              "text": "SU"
+            },
+            {
+              "id": "t0-l",
+              "text": "L"
+            }
+          ],
+          "solutionTileIds": [
+            "t0-l",
+            "t1-u",
+            "t2-p",
+            "t3-a"
+          ],
+          "stimulusAudioId": "word-lupa",
+          "imageId": "lupa"
+        },
+        {
+          "id": "bosque-sonidos-l2-a3-write",
+          "type": "write-word",
+          "skillIds": [
+            "spell-mesa"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-dictate",
+          "difficulty": 1,
+          "hint": "La palabra es mesa.",
+          "hintAudioId": "hint-mesa",
+          "mode": "dictation",
+          "word": "mesa",
+          "acceptedAnswers": [
+            "mesa",
+            "MESA"
+          ],
+          "stimulusAudioId": "word-mesa",
+          "imageId": "mesa"
+        },
+        {
+          "id": "bosque-sonidos-l2-a8-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "sound-l"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra lupa.",
+          "hintAudioId": "hint-lupa",
+          "stimulusAudioId": "word-lupa",
+          "stimulusText": "lupa",
+          "choices": [
+            {
+              "id": "c0-mesa",
+              "text": "MESA",
+              "imageId": "mesa",
+              "audioId": "word-mesa",
+              "correct": false
+            },
+            {
+              "id": "c1-lupa",
+              "text": "LUPA",
+              "imageId": "lupa",
+              "audioId": "word-lupa",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c1-lupa"
+          ]
+        },
+        {
+          "id": "bosque-sonidos-l2-a9-build",
+          "type": "build-word",
+          "skillIds": [
+            "write-lupa"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-build",
+          "difficulty": 1,
+          "hint": "La palabra completa es lupa.",
+          "hintAudioId": "hint-lupa",
+          "word": "LUPA",
+          "tiles": [
+            {
+              "id": "t1-up",
+              "text": "UP"
+            },
+            {
+              "id": "t2-a",
+              "text": "A"
+            },
+            {
+              "id": "tx0-pa",
+              "text": "PA"
+            },
+            {
+              "id": "t0-l",
+              "text": "L"
+            }
+          ],
+          "solutionTileIds": [
+            "t0-l",
+            "t1-up",
+            "t2-a"
+          ],
+          "stimulusAudioId": "word-lupa",
+          "imageId": "lupa"
+        }
+      ],
+      "newActivityIds": [
+        "bosque-sonidos-l2-a0-listen",
+        "bosque-sonidos-l2-a1-read",
+        "bosque-sonidos-l2-a2-build",
+        "bosque-sonidos-l2-a3-write"
+      ],
+      "consolidationActivityIds": [
+        "bosque-sonidos-l2-a8-listen",
+        "bosque-sonidos-l2-a9-build"
+      ]
+    },
+    {
+      "id": "bosque-sonidos-l3",
+      "regionId": "bosque-sonidos",
+      "title": "Lección 3",
+      "activities": [
+        {
+          "id": "bosque-sonidos-l3-a0-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "sound-s"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra sopa.",
+          "hintAudioId": "hint-sopa",
+          "stimulusAudioId": "word-sopa",
+          "stimulusText": "sopa",
+          "choices": [
+            {
+              "id": "c0-mapa",
+              "text": "MAPA",
+              "imageId": "mapa",
+              "audioId": "word-mapa",
+              "correct": false
+            },
+            {
+              "id": "c1-pala",
+              "text": "PALA",
+              "imageId": "pala",
+              "audioId": "word-pala",
+              "correct": false
+            },
+            {
+              "id": "c2-mesa",
+              "text": "MESA",
+              "imageId": "mesa",
+              "audioId": "word-mesa",
+              "correct": false
+            },
+            {
+              "id": "c3-sopa",
+              "text": "SOPA",
+              "imageId": "sopa",
+              "audioId": "word-sopa",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c3-sopa"
+          ]
+        },
+        {
+          "id": "bosque-sonidos-l3-a1-read",
+          "type": "read-relate",
+          "skillIds": [
+            "read-sopa"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-read",
+          "difficulty": 1,
+          "hint": "¿Cuál dice sopa?",
+          "hintAudioId": "hint-sopa",
+          "targetText": "SOPA",
+          "choices": [
+            {
+              "id": "c0-suma",
+              "text": "SUMA",
+              "imageId": "suma",
+              "correct": false
+            },
+            {
+              "id": "c1-mapa",
+              "text": "MAPA",
+              "imageId": "mapa",
+              "correct": false
+            },
+            {
+              "id": "c2-sopa",
+              "text": "SOPA",
+              "imageId": "sopa",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c2-sopa"
+          ]
+        },
+        {
+          "id": "bosque-sonidos-l3-a2-build",
+          "type": "build-word",
+          "skillIds": [
+            "write-suma"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-build",
+          "difficulty": 1,
+          "hint": "La palabra completa es suma.",
+          "hintAudioId": "hint-suma",
+          "word": "SUMA",
+          "tiles": [
+            {
+              "id": "t1-um",
+              "text": "UM"
+            },
+            {
+              "id": "t2-a",
+              "text": "A"
+            },
+            {
+              "id": "tx0-su",
+              "text": "SU"
+            },
+            {
+              "id": "t0-s",
+              "text": "S"
+            }
+          ],
+          "solutionTileIds": [
+            "t0-s",
+            "t1-um",
+            "t2-a"
+          ],
+          "stimulusAudioId": "word-suma",
+          "imageId": "suma"
+        },
+        {
+          "id": "bosque-sonidos-l3-a3-write",
+          "type": "write-word",
+          "skillIds": [
+            "spell-sopa"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-dictate",
+          "difficulty": 1,
+          "hint": "La palabra es sopa.",
+          "hintAudioId": "hint-sopa",
+          "mode": "dictation",
+          "word": "sopa",
+          "acceptedAnswers": [
+            "sopa",
+            "SOPA"
+          ],
+          "stimulusAudioId": "word-sopa",
+          "imageId": "sopa"
+        },
+        {
+          "id": "bosque-sonidos-l3-a8-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "sound-s"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra suma.",
+          "hintAudioId": "hint-suma",
+          "stimulusAudioId": "word-suma",
+          "stimulusText": "suma",
+          "choices": [
+            {
+              "id": "c0-sopa",
+              "text": "SOPA",
+              "imageId": "sopa",
+              "audioId": "word-sopa",
+              "correct": false
+            },
+            {
+              "id": "c1-suma",
+              "text": "SUMA",
+              "imageId": "suma",
+              "audioId": "word-suma",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c1-suma"
+          ]
+        },
+        {
+          "id": "bosque-sonidos-l3-a9-build",
+          "type": "build-word",
+          "skillIds": [
+            "write-suma"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-build",
+          "difficulty": 1,
+          "hint": "La palabra completa es suma.",
+          "hintAudioId": "hint-suma",
+          "word": "SUMA",
+          "tiles": [
+            {
+              "id": "t1-um",
+              "text": "UM"
+            },
+            {
+              "id": "t2-a",
+              "text": "A"
+            },
+            {
+              "id": "tx0-pa",
+              "text": "PA"
+            },
+            {
+              "id": "t0-s",
+              "text": "S"
+            }
+          ],
+          "solutionTileIds": [
+            "t0-s",
+            "t1-um",
+            "t2-a"
+          ],
+          "stimulusAudioId": "word-suma",
+          "imageId": "suma"
+        }
+      ],
+      "newActivityIds": [
+        "bosque-sonidos-l3-a0-listen",
+        "bosque-sonidos-l3-a1-read",
+        "bosque-sonidos-l3-a2-build",
+        "bosque-sonidos-l3-a3-write"
+      ],
+      "consolidationActivityIds": [
+        "bosque-sonidos-l3-a8-listen",
+        "bosque-sonidos-l3-a9-build"
+      ]
+    },
+    {
+      "id": "bosque-sonidos-l4",
+      "regionId": "bosque-sonidos",
+      "title": "Lección 4",
+      "activities": [
+        {
+          "id": "bosque-sonidos-l4-a0-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "sound-s"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra sala.",
+          "hintAudioId": "hint-sala",
+          "stimulusAudioId": "word-sala",
+          "stimulusText": "sala",
+          "choices": [
+            {
+              "id": "c0-mapa",
+              "text": "MAPA",
+              "imageId": "mapa",
+              "audioId": "word-mapa",
+              "correct": false
+            },
+            {
+              "id": "c1-pala",
+              "text": "PALA",
+              "imageId": "pala",
+              "audioId": "word-pala",
+              "correct": false
+            },
+            {
+              "id": "c2-mesa",
+              "text": "MESA",
+              "imageId": "mesa",
+              "audioId": "word-mesa",
+              "correct": false
+            },
+            {
+              "id": "c3-sala",
+              "text": "SALA",
+              "imageId": "sala",
+              "audioId": "word-sala",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c3-sala"
+          ]
+        },
+        {
+          "id": "bosque-sonidos-l4-a1-read",
+          "type": "read-relate",
+          "skillIds": [
+            "read-sala"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-read",
+          "difficulty": 1,
+          "hint": "¿Cuál dice sala?",
+          "hintAudioId": "hint-sala",
+          "targetText": "SALA",
+          "choices": [
+            {
+              "id": "c0-sapo",
+              "text": "SAPO",
+              "imageId": "sapo",
+              "correct": false
+            },
+            {
+              "id": "c1-mapa",
+              "text": "MAPA",
+              "imageId": "mapa",
+              "correct": false
+            },
+            {
+              "id": "c2-sala",
+              "text": "SALA",
+              "imageId": "sala",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c2-sala"
+          ]
+        },
+        {
+          "id": "bosque-sonidos-l4-a2-build",
+          "type": "build-word",
+          "skillIds": [
+            "write-sapo"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-build",
+          "difficulty": 1,
+          "hint": "La palabra completa es sapo.",
+          "hintAudioId": "hint-sapo",
+          "word": "SAPO",
+          "tiles": [
+            {
+              "id": "t1-a",
+              "text": "A"
+            },
+            {
+              "id": "t2-p",
+              "text": "P"
+            },
+            {
+              "id": "t3-o",
+              "text": "O"
+            },
+            {
+              "id": "tx0-su",
+              "text": "SU"
+            },
+            {
+              "id": "t0-s",
+              "text": "S"
+            }
+          ],
+          "solutionTileIds": [
+            "t0-s",
+            "t1-a",
+            "t2-p",
+            "t3-o"
+          ],
+          "stimulusAudioId": "word-sapo",
+          "imageId": "sapo"
+        },
+        {
+          "id": "bosque-sonidos-l4-a3-write",
+          "type": "write-word",
+          "skillIds": [
+            "spell-sala"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-dictate",
+          "difficulty": 1,
+          "hint": "La palabra es sala.",
+          "hintAudioId": "hint-sala",
+          "mode": "dictation",
+          "word": "sala",
+          "acceptedAnswers": [
+            "sala",
+            "SALA"
+          ],
+          "stimulusAudioId": "word-sala",
+          "imageId": "sala"
+        },
+        {
+          "id": "bosque-sonidos-l4-a8-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "sound-s"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra sapo.",
+          "hintAudioId": "hint-sapo",
+          "stimulusAudioId": "word-sapo",
+          "stimulusText": "sapo",
+          "choices": [
+            {
+              "id": "c0-sala",
+              "text": "SALA",
+              "imageId": "sala",
+              "audioId": "word-sala",
+              "correct": false
+            },
+            {
+              "id": "c1-sapo",
+              "text": "SAPO",
+              "imageId": "sapo",
+              "audioId": "word-sapo",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c1-sapo"
+          ]
+        },
+        {
+          "id": "bosque-sonidos-l4-a9-build",
+          "type": "build-word",
+          "skillIds": [
+            "write-sapo"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-build",
+          "difficulty": 1,
+          "hint": "La palabra completa es sapo.",
+          "hintAudioId": "hint-sapo",
+          "word": "SAPO",
+          "tiles": [
+            {
+              "id": "t1-ap",
+              "text": "AP"
+            },
+            {
+              "id": "t2-o",
+              "text": "O"
+            },
+            {
+              "id": "tx0-pa",
+              "text": "PA"
+            },
+            {
+              "id": "t0-s",
+              "text": "S"
+            }
+          ],
+          "solutionTileIds": [
+            "t0-s",
+            "t1-ap",
+            "t2-o"
+          ],
+          "stimulusAudioId": "word-sapo",
+          "imageId": "sapo"
+        }
+      ],
+      "newActivityIds": [
+        "bosque-sonidos-l4-a0-listen",
+        "bosque-sonidos-l4-a1-read",
+        "bosque-sonidos-l4-a2-build",
+        "bosque-sonidos-l4-a3-write"
+      ],
+      "consolidationActivityIds": [
+        "bosque-sonidos-l4-a8-listen",
+        "bosque-sonidos-l4-a9-build"
+      ]
+    }
+  ]
+}

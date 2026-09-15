@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="una pala">
+  <rect width="200" height="200" rx="24" fill="#FFF7E6"/>
+  <circle cx="100" cy="110" r="80" fill="#D7CCC8" opacity="0.3"/>
+    <rect x="94" y="40" width="12" height="80" rx="5" fill="#8D6E63"/>
+    <path d="M55 150 L95 118 L145 118 L105 150 A 25 25 0 0 1 55 150 Z" fill="#26C6DA" stroke="#1A9FB2" stroke-width="4"/>
+  
+</svg>

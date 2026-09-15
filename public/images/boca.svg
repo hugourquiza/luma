@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="una boca">
+  <rect width="200" height="200" rx="24" fill="#FFF7E6"/>
+  <circle cx="100" cy="110" r="80" fill="#D7CCC8" opacity="0.3"/>
+    <ellipse cx="100" cy="120" rx="60" ry="38" fill="#FF6F61"/>
+    <ellipse cx="100" cy="132" rx="50" ry="26" fill="#FF8A80"/>
+    <rect x="72" y="108" width="56" height="8" rx="4" fill="#FFFFFF"/>
+  
+</svg>

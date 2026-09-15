@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "generatedAt": 1789426456053,
+  "regions": [
+    {
+      "id": "playa-vocales",
+      "name": "Playa de las vocales",
+      "color": "sand",
+      "lessonCount": 4
+    },
+    {
+      "id": "bosque-sonidos",
+      "name": "Bosque de los sonidos",
+      "color": "forest",
+      "lessonCount": 4
+    },
+    {
+      "id": "rio-palabras",
+      "name": "Río de las palabras",
+      "color": "river",
+      "lessonCount": 4
+    },
+    {
+      "id": "taller-letras",
+      "name": "Taller de las letras",
+      "color": "workshop",
+      "lessonCount": 4
+    },
+    {
+      "id": "biblioteca-historias",
+      "name": "Biblioteca de historias",
+      "color": "library",
+      "lessonCount": 4
+    }
+  ]
+}

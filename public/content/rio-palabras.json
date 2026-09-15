@@ -1,0 +1,937 @@
+{
+  "id": "rio-palabras",
+  "name": "Río de las palabras",
+  "color": "river",
+  "skills": [
+    "t",
+    "n",
+    "d",
+    "f"
+  ],
+  "lessons": [
+    {
+      "id": "rio-palabras-l1",
+      "regionId": "rio-palabras",
+      "title": "Lección 1",
+      "activities": [
+        {
+          "id": "rio-palabras-l1-a0-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "sound-t"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra tela.",
+          "hintAudioId": "hint-tela",
+          "stimulusAudioId": "word-tela",
+          "stimulusText": "tela",
+          "choices": [
+            {
+              "id": "c0-pato",
+              "text": "PATO",
+              "imageId": "pato",
+              "audioId": "word-pato",
+              "correct": false
+            },
+            {
+              "id": "c1-luna",
+              "text": "LUNA",
+              "imageId": "luna",
+              "audioId": "word-luna",
+              "correct": false
+            },
+            {
+              "id": "c2-dado",
+              "text": "DADO",
+              "imageId": "dado",
+              "audioId": "word-dado",
+              "correct": false
+            },
+            {
+              "id": "c3-tela",
+              "text": "TELA",
+              "imageId": "tela",
+              "audioId": "word-tela",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c3-tela"
+          ]
+        },
+        {
+          "id": "rio-palabras-l1-a1-build",
+          "type": "build-word",
+          "skillIds": [
+            "write-tela"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-build",
+          "difficulty": 1,
+          "hint": "La palabra completa es tela.",
+          "hintAudioId": "hint-tela",
+          "word": "TELA",
+          "tiles": [
+            {
+              "id": "t1-e",
+              "text": "E"
+            },
+            {
+              "id": "t2-l",
+              "text": "L"
+            },
+            {
+              "id": "t3-a",
+              "text": "A"
+            },
+            {
+              "id": "tx0-la",
+              "text": "LA"
+            },
+            {
+              "id": "t0-t",
+              "text": "T"
+            }
+          ],
+          "solutionTileIds": [
+            "t0-t",
+            "t1-e",
+            "t2-l",
+            "t3-a"
+          ],
+          "stimulusAudioId": "word-tela",
+          "imageId": "tela"
+        },
+        {
+          "id": "rio-palabras-l1-a2-read",
+          "type": "read-relate",
+          "skillIds": [
+            "read-pato"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-read",
+          "difficulty": 1,
+          "hint": "¿Cuál dice pato?",
+          "hintAudioId": "hint-pato",
+          "targetText": "PATO",
+          "choices": [
+            {
+              "id": "c0-tela",
+              "text": "TELA",
+              "imageId": "tela",
+              "correct": false
+            },
+            {
+              "id": "c1-pato",
+              "text": "PATO",
+              "imageId": "pato",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c1-pato"
+          ]
+        },
+        {
+          "id": "rio-palabras-l1-a3-write",
+          "type": "write-word",
+          "skillIds": [
+            "spell-tela"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-write-copy",
+          "difficulty": 1,
+          "hint": "La palabra es tela.",
+          "hintAudioId": "hint-tela",
+          "mode": "copy",
+          "word": "tela",
+          "model": "TELA",
+          "acceptedAnswers": [
+            "tela",
+            "TELA"
+          ],
+          "imageId": "tela"
+        },
+        {
+          "id": "rio-palabras-l1-a8-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "sound-p"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra pato.",
+          "hintAudioId": "hint-pato",
+          "stimulusAudioId": "word-pato",
+          "stimulusText": "pato",
+          "choices": [
+            {
+              "id": "c0-tela",
+              "text": "TELA",
+              "imageId": "tela",
+              "audioId": "word-tela",
+              "correct": false
+            },
+            {
+              "id": "c1-pato",
+              "text": "PATO",
+              "imageId": "pato",
+              "audioId": "word-pato",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c1-pato"
+          ]
+        },
+        {
+          "id": "rio-palabras-l1-a9-build",
+          "type": "build-word",
+          "skillIds": [
+            "write-pato"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-build",
+          "difficulty": 1,
+          "hint": "La palabra completa es pato.",
+          "hintAudioId": "hint-pato",
+          "word": "PATO",
+          "tiles": [
+            {
+              "id": "t1-at",
+              "text": "AT"
+            },
+            {
+              "id": "t2-o",
+              "text": "O"
+            },
+            {
+              "id": "tx0-pa",
+              "text": "PA"
+            },
+            {
+              "id": "t0-p",
+              "text": "P"
+            }
+          ],
+          "solutionTileIds": [
+            "t0-p",
+            "t1-at",
+            "t2-o"
+          ],
+          "stimulusAudioId": "word-pato",
+          "imageId": "pato"
+        }
+      ],
+      "newActivityIds": [
+        "rio-palabras-l1-a0-listen",
+        "rio-palabras-l1-a1-build",
+        "rio-palabras-l1-a2-read",
+        "rio-palabras-l1-a3-write"
+      ],
+      "consolidationActivityIds": [
+        "rio-palabras-l1-a8-listen",
+        "rio-palabras-l1-a9-build"
+      ]
+    },
+    {
+      "id": "rio-palabras-l2",
+      "regionId": "rio-palabras",
+      "title": "Lección 2",
+      "activities": [
+        {
+          "id": "rio-palabras-l2-a0-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "sound-l"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra luna.",
+          "hintAudioId": "hint-luna",
+          "stimulusAudioId": "word-luna",
+          "stimulusText": "luna",
+          "choices": [
+            {
+              "id": "c0-tela",
+              "text": "TELA",
+              "imageId": "tela",
+              "audioId": "word-tela",
+              "correct": false
+            },
+            {
+              "id": "c1-pato",
+              "text": "PATO",
+              "imageId": "pato",
+              "audioId": "word-pato",
+              "correct": false
+            },
+            {
+              "id": "c2-dado",
+              "text": "DADO",
+              "imageId": "dado",
+              "audioId": "word-dado",
+              "correct": false
+            },
+            {
+              "id": "c3-luna",
+              "text": "LUNA",
+              "imageId": "luna",
+              "audioId": "word-luna",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c3-luna"
+          ]
+        },
+        {
+          "id": "rio-palabras-l2-a1-build",
+          "type": "build-word",
+          "skillIds": [
+            "write-luna"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-build",
+          "difficulty": 1,
+          "hint": "La palabra completa es luna.",
+          "hintAudioId": "hint-luna",
+          "word": "LUNA",
+          "tiles": [
+            {
+              "id": "t1-un",
+              "text": "UN"
+            },
+            {
+              "id": "t2-a",
+              "text": "A"
+            },
+            {
+              "id": "tx0-la",
+              "text": "LA"
+            },
+            {
+              "id": "t0-l",
+              "text": "L"
+            }
+          ],
+          "solutionTileIds": [
+            "t0-l",
+            "t1-un",
+            "t2-a"
+          ],
+          "stimulusAudioId": "word-luna",
+          "imageId": "luna"
+        },
+        {
+          "id": "rio-palabras-l2-a2-read",
+          "type": "read-relate",
+          "skillIds": [
+            "read-dado"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-read",
+          "difficulty": 1,
+          "hint": "¿Cuál dice dado?",
+          "hintAudioId": "hint-dado",
+          "targetText": "DADO",
+          "choices": [
+            {
+              "id": "c0-luna",
+              "text": "LUNA",
+              "imageId": "luna",
+              "correct": false
+            },
+            {
+              "id": "c1-tela",
+              "text": "TELA",
+              "imageId": "tela",
+              "correct": false
+            },
+            {
+              "id": "c2-dado",
+              "text": "DADO",
+              "imageId": "dado",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c2-dado"
+          ]
+        },
+        {
+          "id": "rio-palabras-l2-a3-write",
+          "type": "write-word",
+          "skillIds": [
+            "spell-luna"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-write-copy",
+          "difficulty": 1,
+          "hint": "La palabra es luna.",
+          "hintAudioId": "hint-luna",
+          "mode": "complete",
+          "word": "luna",
+          "acceptedAnswers": [
+            "luna",
+            "LUNA"
+          ],
+          "blankPattern": "l_na",
+          "completionChoices": [
+            "a",
+            "e",
+            "i",
+            "o",
+            "u"
+          ],
+          "imageId": "luna"
+        },
+        {
+          "id": "rio-palabras-l2-a8-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "sound-d"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra dado.",
+          "hintAudioId": "hint-dado",
+          "stimulusAudioId": "word-dado",
+          "stimulusText": "dado",
+          "choices": [
+            {
+              "id": "c0-luna",
+              "text": "LUNA",
+              "imageId": "luna",
+              "audioId": "word-luna",
+              "correct": false
+            },
+            {
+              "id": "c1-dado",
+              "text": "DADO",
+              "imageId": "dado",
+              "audioId": "word-dado",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c1-dado"
+          ]
+        },
+        {
+          "id": "rio-palabras-l2-a9-build",
+          "type": "build-word",
+          "skillIds": [
+            "write-dado"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-build",
+          "difficulty": 1,
+          "hint": "La palabra completa es dado.",
+          "hintAudioId": "hint-dado",
+          "word": "DADO",
+          "tiles": [
+            {
+              "id": "t1-ad",
+              "text": "AD"
+            },
+            {
+              "id": "t2-o",
+              "text": "O"
+            },
+            {
+              "id": "tx0-pa",
+              "text": "PA"
+            },
+            {
+              "id": "t0-d",
+              "text": "D"
+            }
+          ],
+          "solutionTileIds": [
+            "t0-d",
+            "t1-ad",
+            "t2-o"
+          ],
+          "stimulusAudioId": "word-dado",
+          "imageId": "dado"
+        }
+      ],
+      "newActivityIds": [
+        "rio-palabras-l2-a0-listen",
+        "rio-palabras-l2-a1-build",
+        "rio-palabras-l2-a2-read",
+        "rio-palabras-l2-a3-write"
+      ],
+      "consolidationActivityIds": [
+        "rio-palabras-l2-a8-listen",
+        "rio-palabras-l2-a9-build"
+      ]
+    },
+    {
+      "id": "rio-palabras-l3",
+      "regionId": "rio-palabras",
+      "title": "Lección 3",
+      "activities": [
+        {
+          "id": "rio-palabras-l3-a0-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "sound-f"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra foto.",
+          "hintAudioId": "hint-foto",
+          "stimulusAudioId": "word-foto",
+          "stimulusText": "foto",
+          "choices": [
+            {
+              "id": "c0-tela",
+              "text": "TELA",
+              "imageId": "tela",
+              "audioId": "word-tela",
+              "correct": false
+            },
+            {
+              "id": "c1-pato",
+              "text": "PATO",
+              "imageId": "pato",
+              "audioId": "word-pato",
+              "correct": false
+            },
+            {
+              "id": "c2-luna",
+              "text": "LUNA",
+              "imageId": "luna",
+              "audioId": "word-luna",
+              "correct": false
+            },
+            {
+              "id": "c3-foto",
+              "text": "FOTO",
+              "imageId": "foto",
+              "audioId": "word-foto",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c3-foto"
+          ]
+        },
+        {
+          "id": "rio-palabras-l3-a1-build",
+          "type": "build-word",
+          "skillIds": [
+            "write-foto"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-build",
+          "difficulty": 1,
+          "hint": "La palabra completa es foto.",
+          "hintAudioId": "hint-foto",
+          "word": "FOTO",
+          "tiles": [
+            {
+              "id": "t1-o",
+              "text": "O"
+            },
+            {
+              "id": "t2-t",
+              "text": "T"
+            },
+            {
+              "id": "t3-o",
+              "text": "O"
+            },
+            {
+              "id": "tx0-la",
+              "text": "LA"
+            },
+            {
+              "id": "t0-f",
+              "text": "F"
+            }
+          ],
+          "solutionTileIds": [
+            "t0-f",
+            "t1-o",
+            "t2-t",
+            "t3-o"
+          ],
+          "stimulusAudioId": "word-foto",
+          "imageId": "foto"
+        },
+        {
+          "id": "rio-palabras-l3-a2-read",
+          "type": "read-relate",
+          "skillIds": [
+            "read-sol"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-read",
+          "difficulty": 1,
+          "hint": "¿Cuál dice sol?",
+          "hintAudioId": "hint-sol",
+          "targetText": "SOL",
+          "choices": [
+            {
+              "id": "c0-foto",
+              "text": "FOTO",
+              "imageId": "foto",
+              "correct": false
+            },
+            {
+              "id": "c1-tela",
+              "text": "TELA",
+              "imageId": "tela",
+              "correct": false
+            },
+            {
+              "id": "c2-sol",
+              "text": "SOL",
+              "imageId": "sol",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c2-sol"
+          ]
+        },
+        {
+          "id": "rio-palabras-l3-a3-write",
+          "type": "write-word",
+          "skillIds": [
+            "spell-foto"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-write-copy",
+          "difficulty": 1,
+          "hint": "La palabra es foto.",
+          "hintAudioId": "hint-foto",
+          "mode": "copy",
+          "word": "foto",
+          "model": "FOTO",
+          "acceptedAnswers": [
+            "foto",
+            "FOTO"
+          ],
+          "imageId": "foto"
+        },
+        {
+          "id": "rio-palabras-l3-a8-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "sound-s"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra sol.",
+          "hintAudioId": "hint-sol",
+          "stimulusAudioId": "word-sol",
+          "stimulusText": "sol",
+          "choices": [
+            {
+              "id": "c0-foto",
+              "text": "FOTO",
+              "imageId": "foto",
+              "audioId": "word-foto",
+              "correct": false
+            },
+            {
+              "id": "c1-sol",
+              "text": "SOL",
+              "imageId": "sol",
+              "audioId": "word-sol",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c1-sol"
+          ]
+        },
+        {
+          "id": "rio-palabras-l3-a9-build",
+          "type": "build-word",
+          "skillIds": [
+            "write-sol"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-build",
+          "difficulty": 1,
+          "hint": "La palabra completa es sol.",
+          "hintAudioId": "hint-sol",
+          "word": "SOL",
+          "tiles": [
+            {
+              "id": "t1-ol",
+              "text": "OL"
+            },
+            {
+              "id": "tx0-pa",
+              "text": "PA"
+            },
+            {
+              "id": "t0-s",
+              "text": "S"
+            }
+          ],
+          "solutionTileIds": [
+            "t0-s",
+            "t1-ol"
+          ],
+          "stimulusAudioId": "word-sol",
+          "imageId": "sol"
+        }
+      ],
+      "newActivityIds": [
+        "rio-palabras-l3-a0-listen",
+        "rio-palabras-l3-a1-build",
+        "rio-palabras-l3-a2-read",
+        "rio-palabras-l3-a3-write"
+      ],
+      "consolidationActivityIds": [
+        "rio-palabras-l3-a8-listen",
+        "rio-palabras-l3-a9-build"
+      ]
+    },
+    {
+      "id": "rio-palabras-l4",
+      "regionId": "rio-palabras",
+      "title": "Lección 4",
+      "activities": [
+        {
+          "id": "rio-palabras-l4-a0-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "sound-p"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra pan.",
+          "hintAudioId": "hint-pan",
+          "stimulusAudioId": "word-pan",
+          "stimulusText": "pan",
+          "choices": [
+            {
+              "id": "c0-tela",
+              "text": "TELA",
+              "imageId": "tela",
+              "audioId": "word-tela",
+              "correct": false
+            },
+            {
+              "id": "c1-pato",
+              "text": "PATO",
+              "imageId": "pato",
+              "audioId": "word-pato",
+              "correct": false
+            },
+            {
+              "id": "c2-luna",
+              "text": "LUNA",
+              "imageId": "luna",
+              "audioId": "word-luna",
+              "correct": false
+            },
+            {
+              "id": "c3-pan",
+              "text": "PAN",
+              "imageId": "pan",
+              "audioId": "word-pan",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c3-pan"
+          ]
+        },
+        {
+          "id": "rio-palabras-l4-a1-build",
+          "type": "build-word",
+          "skillIds": [
+            "write-pan"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-build",
+          "difficulty": 1,
+          "hint": "La palabra completa es pan.",
+          "hintAudioId": "hint-pan",
+          "word": "PAN",
+          "tiles": [
+            {
+              "id": "t1-an",
+              "text": "AN"
+            },
+            {
+              "id": "tx0-la",
+              "text": "LA"
+            },
+            {
+              "id": "t0-p",
+              "text": "P"
+            }
+          ],
+          "solutionTileIds": [
+            "t0-p",
+            "t1-an"
+          ],
+          "stimulusAudioId": "word-pan",
+          "imageId": "pan"
+        },
+        {
+          "id": "rio-palabras-l4-a2-read",
+          "type": "read-relate",
+          "skillIds": [
+            "read-nata"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-read",
+          "difficulty": 1,
+          "hint": "¿Cuál dice nata?",
+          "hintAudioId": "hint-nata",
+          "targetText": "NATA",
+          "choices": [
+            {
+              "id": "c0-pan",
+              "text": "PAN",
+              "imageId": "pan",
+              "correct": false
+            },
+            {
+              "id": "c1-tela",
+              "text": "TELA",
+              "imageId": "tela",
+              "correct": false
+            },
+            {
+              "id": "c2-nata",
+              "text": "NATA",
+              "imageId": "nata",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c2-nata"
+          ]
+        },
+        {
+          "id": "rio-palabras-l4-a3-write",
+          "type": "write-word",
+          "skillIds": [
+            "spell-pan"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-write-copy",
+          "difficulty": 1,
+          "hint": "La palabra es pan.",
+          "hintAudioId": "hint-pan",
+          "mode": "complete",
+          "word": "pan",
+          "acceptedAnswers": [
+            "pan",
+            "PAN"
+          ],
+          "blankPattern": "p_n",
+          "completionChoices": [
+            "a",
+            "e",
+            "i",
+            "o",
+            "u"
+          ],
+          "imageId": "pan"
+        },
+        {
+          "id": "rio-palabras-l4-a8-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "sound-n"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra nata.",
+          "hintAudioId": "hint-nata",
+          "stimulusAudioId": "word-nata",
+          "stimulusText": "nata",
+          "choices": [
+            {
+              "id": "c0-pan",
+              "text": "PAN",
+              "imageId": "pan",
+              "audioId": "word-pan",
+              "correct": false
+            },
+            {
+              "id": "c1-nata",
+              "text": "NATA",
+              "imageId": "nata",
+              "audioId": "word-nata",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c1-nata"
+          ]
+        },
+        {
+          "id": "rio-palabras-l4-a9-build",
+          "type": "build-word",
+          "skillIds": [
+            "write-nata"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-build",
+          "difficulty": 1,
+          "hint": "La palabra completa es nata.",
+          "hintAudioId": "hint-nata",
+          "word": "NATA",
+          "tiles": [
+            {
+              "id": "t1-at",
+              "text": "AT"
+            },
+            {
+              "id": "t2-a",
+              "text": "A"
+            },
+            {
+              "id": "tx0-pa",
+              "text": "PA"
+            },
+            {
+              "id": "t0-n",
+              "text": "N"
+            }
+          ],
+          "solutionTileIds": [
+            "t0-n",
+            "t1-at",
+            "t2-a"
+          ],
+          "stimulusAudioId": "word-nata",
+          "imageId": "nata"
+        }
+      ],
+      "newActivityIds": [
+        "rio-palabras-l4-a0-listen",
+        "rio-palabras-l4-a1-build",
+        "rio-palabras-l4-a2-read",
+        "rio-palabras-l4-a3-write"
+      ],
+      "consolidationActivityIds": [
+        "rio-palabras-l4-a8-listen",
+        "rio-palabras-l4-a9-build"
+      ]
+    }
+  ]
+}

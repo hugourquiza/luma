@@ -1,0 +1,1046 @@
+{
+  "id": "playa-vocales",
+  "name": "Playa de las vocales",
+  "color": "sand",
+  "skills": [
+    "a",
+    "e",
+    "i",
+    "o",
+    "u"
+  ],
+  "lessons": [
+    {
+      "id": "playa-vocales-l1",
+      "regionId": "playa-vocales",
+      "title": "Lección 1",
+      "activities": [
+        {
+          "id": "playa-vocales-l1-a0-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "vowels"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra ala.",
+          "hintAudioId": "hint-ala",
+          "stimulusAudioId": "word-ala",
+          "stimulusText": "ala",
+          "choices": [
+            {
+              "id": "c0-ele",
+              "text": "ELE",
+              "imageId": "ele",
+              "audioId": "word-ele",
+              "correct": false
+            },
+            {
+              "id": "c1-ola",
+              "text": "OLA",
+              "imageId": "ola",
+              "audioId": "word-ola",
+              "correct": false
+            },
+            {
+              "id": "c2-oso",
+              "text": "OSO",
+              "imageId": "oso",
+              "audioId": "word-oso",
+              "correct": false
+            },
+            {
+              "id": "c3-ala",
+              "text": "ALA",
+              "imageId": "ala",
+              "audioId": "word-ala",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c3-ala"
+          ]
+        },
+        {
+          "id": "playa-vocales-l1-a1-read",
+          "type": "read-relate",
+          "skillIds": [
+            "read-ala"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-read",
+          "difficulty": 1,
+          "hint": "¿Cuál dice ala?",
+          "hintAudioId": "hint-ala",
+          "targetText": "ALA",
+          "choices": [
+            {
+              "id": "c0-ele",
+              "text": "ELE",
+              "imageId": "ele",
+              "correct": false
+            },
+            {
+              "id": "c1-ola",
+              "text": "OLA",
+              "imageId": "ola",
+              "correct": false
+            },
+            {
+              "id": "c2-oso",
+              "text": "OSO",
+              "imageId": "oso",
+              "correct": false
+            },
+            {
+              "id": "c3-ala",
+              "text": "ALA",
+              "imageId": "ala",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c3-ala"
+          ]
+        },
+        {
+          "id": "playa-vocales-l1-a2-trace",
+          "type": "trace-letter",
+          "skillIds": [
+            "trace-A"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-trace",
+          "difficulty": 1,
+          "hint": "Dibujá la letra A.",
+          "hintAudioId": "hint-letter-A",
+          "letter": "A",
+          "strokes": [
+            {
+              "points": [
+                {
+                  "x": 0.15,
+                  "y": 1
+                },
+                {
+                  "x": 0.5,
+                  "y": 0.1
+                },
+                {
+                  "x": 0.85,
+                  "y": 1
+                }
+              ]
+            },
+            {
+              "points": [
+                {
+                  "x": 0.3,
+                  "y": 0.65
+                },
+                {
+                  "x": 0.7,
+                  "y": 0.65
+                }
+              ]
+            }
+          ],
+          "start": {
+            "x": 0.15,
+            "y": 1
+          },
+          "assistMode": true
+        },
+        {
+          "id": "playa-vocales-l1-a3-build",
+          "type": "build-word",
+          "skillIds": [
+            "write-ala"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-build",
+          "difficulty": 1,
+          "hint": "La palabra completa es ala.",
+          "hintAudioId": "hint-ala",
+          "word": "ALA",
+          "tiles": [
+            {
+              "id": "t1-l",
+              "text": "L"
+            },
+            {
+              "id": "t2-a",
+              "text": "A"
+            },
+            {
+              "id": "tx0-A",
+              "text": "A"
+            },
+            {
+              "id": "t0-a",
+              "text": "A"
+            }
+          ],
+          "solutionTileIds": [
+            "t0-a",
+            "t1-l",
+            "t2-a"
+          ],
+          "stimulusAudioId": "word-ala",
+          "imageId": "ala"
+        },
+        {
+          "id": "playa-vocales-l1-a8-trace",
+          "type": "trace-letter",
+          "skillIds": [
+            "trace-E"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-trace",
+          "difficulty": 1,
+          "hint": "Dibujá la letra E.",
+          "hintAudioId": "hint-letter-E",
+          "letter": "E",
+          "strokes": [
+            {
+              "points": [
+                {
+                  "x": 0.3,
+                  "y": 0.15
+                },
+                {
+                  "x": 0.7,
+                  "y": 0.15
+                },
+                {
+                  "x": 0.3,
+                  "y": 0.15
+                },
+                {
+                  "x": 0.3,
+                  "y": 0.85
+                },
+                {
+                  "x": 0.7,
+                  "y": 0.85
+                }
+              ]
+            }
+          ],
+          "start": {
+            "x": 0.3,
+            "y": 0.15
+          },
+          "assistMode": true
+        },
+        {
+          "id": "playa-vocales-l1-a9-read",
+          "type": "read-relate",
+          "skillIds": [
+            "read-ele"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-read",
+          "difficulty": 1,
+          "hint": "¿Cuál dice ele?",
+          "hintAudioId": "hint-ele",
+          "targetText": "ELE",
+          "choices": [
+            {
+              "id": "c0-ala",
+              "text": "ALA",
+              "imageId": "ala",
+              "correct": false
+            },
+            {
+              "id": "c1-ele",
+              "text": "ELE",
+              "imageId": "ele",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c1-ele"
+          ]
+        }
+      ],
+      "newActivityIds": [
+        "playa-vocales-l1-a0-listen",
+        "playa-vocales-l1-a1-read",
+        "playa-vocales-l1-a2-trace",
+        "playa-vocales-l1-a3-build"
+      ],
+      "consolidationActivityIds": [
+        "playa-vocales-l1-a8-trace",
+        "playa-vocales-l1-a9-read"
+      ]
+    },
+    {
+      "id": "playa-vocales-l2",
+      "regionId": "playa-vocales",
+      "title": "Lección 2",
+      "activities": [
+        {
+          "id": "playa-vocales-l2-a0-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "vowels"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra ola.",
+          "hintAudioId": "hint-ola",
+          "stimulusAudioId": "word-ola",
+          "stimulusText": "ola",
+          "choices": [
+            {
+              "id": "c0-ala",
+              "text": "ALA",
+              "imageId": "ala",
+              "audioId": "word-ala",
+              "correct": false
+            },
+            {
+              "id": "c1-ele",
+              "text": "ELE",
+              "imageId": "ele",
+              "audioId": "word-ele",
+              "correct": false
+            },
+            {
+              "id": "c2-oso",
+              "text": "OSO",
+              "imageId": "oso",
+              "audioId": "word-oso",
+              "correct": false
+            },
+            {
+              "id": "c3-ola",
+              "text": "OLA",
+              "imageId": "ola",
+              "audioId": "word-ola",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c3-ola"
+          ]
+        },
+        {
+          "id": "playa-vocales-l2-a1-read",
+          "type": "read-relate",
+          "skillIds": [
+            "read-ola"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-read",
+          "difficulty": 1,
+          "hint": "¿Cuál dice ola?",
+          "hintAudioId": "hint-ola",
+          "targetText": "OLA",
+          "choices": [
+            {
+              "id": "c0-oso",
+              "text": "OSO",
+              "imageId": "oso",
+              "correct": false
+            },
+            {
+              "id": "c1-ala",
+              "text": "ALA",
+              "imageId": "ala",
+              "correct": false
+            },
+            {
+              "id": "c2-ele",
+              "text": "ELE",
+              "imageId": "ele",
+              "correct": false
+            },
+            {
+              "id": "c3-ola",
+              "text": "OLA",
+              "imageId": "ola",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c3-ola"
+          ]
+        },
+        {
+          "id": "playa-vocales-l2-a2-trace",
+          "type": "trace-letter",
+          "skillIds": [
+            "trace-E"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-trace",
+          "difficulty": 1,
+          "hint": "Dibujá la letra E.",
+          "hintAudioId": "hint-letter-E",
+          "letter": "E",
+          "strokes": [
+            {
+              "points": [
+                {
+                  "x": 0.3,
+                  "y": 0.15
+                },
+                {
+                  "x": 0.7,
+                  "y": 0.15
+                },
+                {
+                  "x": 0.3,
+                  "y": 0.15
+                },
+                {
+                  "x": 0.3,
+                  "y": 0.85
+                },
+                {
+                  "x": 0.7,
+                  "y": 0.85
+                }
+              ]
+            }
+          ],
+          "start": {
+            "x": 0.3,
+            "y": 0.15
+          },
+          "assistMode": true
+        },
+        {
+          "id": "playa-vocales-l2-a3-build",
+          "type": "build-word",
+          "skillIds": [
+            "write-ola"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-build",
+          "difficulty": 1,
+          "hint": "La palabra completa es ola.",
+          "hintAudioId": "hint-ola",
+          "word": "OLA",
+          "tiles": [
+            {
+              "id": "t1-l",
+              "text": "L"
+            },
+            {
+              "id": "t2-a",
+              "text": "A"
+            },
+            {
+              "id": "tx0-A",
+              "text": "A"
+            },
+            {
+              "id": "t0-o",
+              "text": "O"
+            }
+          ],
+          "solutionTileIds": [
+            "t0-o",
+            "t1-l",
+            "t2-a"
+          ],
+          "stimulusAudioId": "word-ola",
+          "imageId": "ola"
+        },
+        {
+          "id": "playa-vocales-l2-a8-trace",
+          "type": "trace-letter",
+          "skillIds": [
+            "trace-I"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-trace",
+          "difficulty": 1,
+          "hint": "Dibujá la letra I.",
+          "hintAudioId": "hint-letter-I",
+          "letter": "I",
+          "strokes": [
+            {
+              "points": [
+                {
+                  "x": 0.4,
+                  "y": 0.1
+                },
+                {
+                  "x": 0.4,
+                  "y": 0.9
+                }
+              ]
+            }
+          ],
+          "start": {
+            "x": 0.4,
+            "y": 0.1
+          },
+          "assistMode": true
+        },
+        {
+          "id": "playa-vocales-l2-a9-read",
+          "type": "read-relate",
+          "skillIds": [
+            "read-oso"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-read",
+          "difficulty": 1,
+          "hint": "¿Cuál dice oso?",
+          "hintAudioId": "hint-oso",
+          "targetText": "OSO",
+          "choices": [
+            {
+              "id": "c0-ola",
+              "text": "OLA",
+              "imageId": "ola",
+              "correct": false
+            },
+            {
+              "id": "c1-oso",
+              "text": "OSO",
+              "imageId": "oso",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c1-oso"
+          ]
+        }
+      ],
+      "newActivityIds": [
+        "playa-vocales-l2-a0-listen",
+        "playa-vocales-l2-a1-read",
+        "playa-vocales-l2-a2-trace",
+        "playa-vocales-l2-a3-build"
+      ],
+      "consolidationActivityIds": [
+        "playa-vocales-l2-a8-trace",
+        "playa-vocales-l2-a9-read"
+      ]
+    },
+    {
+      "id": "playa-vocales-l3",
+      "regionId": "playa-vocales",
+      "title": "Lección 3",
+      "activities": [
+        {
+          "id": "playa-vocales-l3-a0-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "vowels"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra una.",
+          "hintAudioId": "hint-una",
+          "stimulusAudioId": "word-una",
+          "stimulusText": "una",
+          "choices": [
+            {
+              "id": "c0-ala",
+              "text": "ALA",
+              "imageId": "ala",
+              "audioId": "word-ala",
+              "correct": false
+            },
+            {
+              "id": "c1-ele",
+              "text": "ELE",
+              "imageId": "ele",
+              "audioId": "word-ele",
+              "correct": false
+            },
+            {
+              "id": "c2-ola",
+              "text": "OLA",
+              "imageId": "ola",
+              "audioId": "word-ola",
+              "correct": false
+            },
+            {
+              "id": "c3-una",
+              "text": "UNA",
+              "imageId": "una",
+              "audioId": "word-una",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c3-una"
+          ]
+        },
+        {
+          "id": "playa-vocales-l3-a1-read",
+          "type": "read-relate",
+          "skillIds": [
+            "read-una"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-read",
+          "difficulty": 1,
+          "hint": "¿Cuál dice una?",
+          "hintAudioId": "hint-una",
+          "targetText": "UNA",
+          "choices": [
+            {
+              "id": "c0-uva",
+              "text": "UVA",
+              "imageId": "uva",
+              "correct": false
+            },
+            {
+              "id": "c1-ala",
+              "text": "ALA",
+              "imageId": "ala",
+              "correct": false
+            },
+            {
+              "id": "c2-ele",
+              "text": "ELE",
+              "imageId": "ele",
+              "correct": false
+            },
+            {
+              "id": "c3-una",
+              "text": "UNA",
+              "imageId": "una",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c3-una"
+          ]
+        },
+        {
+          "id": "playa-vocales-l3-a2-trace",
+          "type": "trace-letter",
+          "skillIds": [
+            "trace-I"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-trace",
+          "difficulty": 1,
+          "hint": "Dibujá la letra I.",
+          "hintAudioId": "hint-letter-I",
+          "letter": "I",
+          "strokes": [
+            {
+              "points": [
+                {
+                  "x": 0.4,
+                  "y": 0.1
+                },
+                {
+                  "x": 0.4,
+                  "y": 0.9
+                }
+              ]
+            }
+          ],
+          "start": {
+            "x": 0.4,
+            "y": 0.1
+          },
+          "assistMode": true
+        },
+        {
+          "id": "playa-vocales-l3-a3-build",
+          "type": "build-word",
+          "skillIds": [
+            "write-una"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-build",
+          "difficulty": 1,
+          "hint": "La palabra completa es una.",
+          "hintAudioId": "hint-una",
+          "word": "UNA",
+          "tiles": [
+            {
+              "id": "t1-n",
+              "text": "N"
+            },
+            {
+              "id": "t2-a",
+              "text": "A"
+            },
+            {
+              "id": "tx0-A",
+              "text": "A"
+            },
+            {
+              "id": "t0-u",
+              "text": "U"
+            }
+          ],
+          "solutionTileIds": [
+            "t0-u",
+            "t1-n",
+            "t2-a"
+          ],
+          "stimulusAudioId": "word-una",
+          "imageId": "una"
+        },
+        {
+          "id": "playa-vocales-l3-a8-trace",
+          "type": "trace-letter",
+          "skillIds": [
+            "trace-O"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-trace",
+          "difficulty": 1,
+          "hint": "Dibujá la letra O.",
+          "hintAudioId": "hint-letter-O",
+          "letter": "O",
+          "strokes": [
+            {
+              "points": [
+                {
+                  "x": 0.85,
+                  "y": 0.5
+                },
+                {
+                  "x": 0.5,
+                  "y": 0.15
+                },
+                {
+                  "x": 0.15,
+                  "y": 0.5
+                },
+                {
+                  "x": 0.5,
+                  "y": 0.85
+                },
+                {
+                  "x": 0.85,
+                  "y": 0.5
+                }
+              ]
+            }
+          ],
+          "start": {
+            "x": 0.85,
+            "y": 0.5
+          },
+          "assistMode": true
+        },
+        {
+          "id": "playa-vocales-l3-a9-read",
+          "type": "read-relate",
+          "skillIds": [
+            "read-uva"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-read",
+          "difficulty": 1,
+          "hint": "¿Cuál dice uva?",
+          "hintAudioId": "hint-uva",
+          "targetText": "UVA",
+          "choices": [
+            {
+              "id": "c0-una",
+              "text": "UNA",
+              "imageId": "una",
+              "correct": false
+            },
+            {
+              "id": "c1-uva",
+              "text": "UVA",
+              "imageId": "uva",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c1-uva"
+          ]
+        }
+      ],
+      "newActivityIds": [
+        "playa-vocales-l3-a0-listen",
+        "playa-vocales-l3-a1-read",
+        "playa-vocales-l3-a2-trace",
+        "playa-vocales-l3-a3-build"
+      ],
+      "consolidationActivityIds": [
+        "playa-vocales-l3-a8-trace",
+        "playa-vocales-l3-a9-read"
+      ]
+    },
+    {
+      "id": "playa-vocales-l4",
+      "regionId": "playa-vocales",
+      "title": "Lección 4",
+      "activities": [
+        {
+          "id": "playa-vocales-l4-a0-listen",
+          "type": "listen-choose",
+          "skillIds": [
+            "vowels"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-listen",
+          "difficulty": 1,
+          "hint": "Escuchá la palabra ojo.",
+          "hintAudioId": "hint-ojo",
+          "stimulusAudioId": "word-ojo",
+          "stimulusText": "ojo",
+          "choices": [
+            {
+              "id": "c0-ala",
+              "text": "ALA",
+              "imageId": "ala",
+              "audioId": "word-ala",
+              "correct": false
+            },
+            {
+              "id": "c1-ele",
+              "text": "ELE",
+              "imageId": "ele",
+              "audioId": "word-ele",
+              "correct": false
+            },
+            {
+              "id": "c2-ola",
+              "text": "OLA",
+              "imageId": "ola",
+              "audioId": "word-ola",
+              "correct": false
+            },
+            {
+              "id": "c3-ojo",
+              "text": "OJO",
+              "imageId": "ojo",
+              "audioId": "word-ojo",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c3-ojo"
+          ]
+        },
+        {
+          "id": "playa-vocales-l4-a1-read",
+          "type": "read-relate",
+          "skillIds": [
+            "read-ojo"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-read",
+          "difficulty": 1,
+          "hint": "¿Cuál dice ojo?",
+          "hintAudioId": "hint-ojo",
+          "targetText": "OJO",
+          "choices": [
+            {
+              "id": "c0-uno",
+              "text": "UNO",
+              "imageId": "uno",
+              "correct": false
+            },
+            {
+              "id": "c1-ala",
+              "text": "ALA",
+              "imageId": "ala",
+              "correct": false
+            },
+            {
+              "id": "c2-ele",
+              "text": "ELE",
+              "imageId": "ele",
+              "correct": false
+            },
+            {
+              "id": "c3-ojo",
+              "text": "OJO",
+              "imageId": "ojo",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c3-ojo"
+          ]
+        },
+        {
+          "id": "playa-vocales-l4-a2-trace",
+          "type": "trace-letter",
+          "skillIds": [
+            "trace-O"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-trace",
+          "difficulty": 1,
+          "hint": "Dibujá la letra O.",
+          "hintAudioId": "hint-letter-O",
+          "letter": "O",
+          "strokes": [
+            {
+              "points": [
+                {
+                  "x": 0.85,
+                  "y": 0.5
+                },
+                {
+                  "x": 0.5,
+                  "y": 0.15
+                },
+                {
+                  "x": 0.15,
+                  "y": 0.5
+                },
+                {
+                  "x": 0.5,
+                  "y": 0.85
+                },
+                {
+                  "x": 0.85,
+                  "y": 0.5
+                }
+              ]
+            }
+          ],
+          "start": {
+            "x": 0.85,
+            "y": 0.5
+          },
+          "assistMode": true
+        },
+        {
+          "id": "playa-vocales-l4-a3-build",
+          "type": "build-word",
+          "skillIds": [
+            "write-ojo"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-build",
+          "difficulty": 1,
+          "hint": "La palabra completa es ojo.",
+          "hintAudioId": "hint-ojo",
+          "word": "OJO",
+          "tiles": [
+            {
+              "id": "t1-j",
+              "text": "J"
+            },
+            {
+              "id": "t2-o",
+              "text": "O"
+            },
+            {
+              "id": "tx0-A",
+              "text": "A"
+            },
+            {
+              "id": "t0-o",
+              "text": "O"
+            }
+          ],
+          "solutionTileIds": [
+            "t0-o",
+            "t1-j",
+            "t2-o"
+          ],
+          "stimulusAudioId": "word-ojo",
+          "imageId": "ojo"
+        },
+        {
+          "id": "playa-vocales-l4-a8-trace",
+          "type": "trace-letter",
+          "skillIds": [
+            "trace-A"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-trace",
+          "difficulty": 1,
+          "hint": "Dibujá la letra A.",
+          "hintAudioId": "hint-letter-A",
+          "letter": "A",
+          "strokes": [
+            {
+              "points": [
+                {
+                  "x": 0.15,
+                  "y": 1
+                },
+                {
+                  "x": 0.5,
+                  "y": 0.1
+                },
+                {
+                  "x": 0.85,
+                  "y": 1
+                }
+              ]
+            },
+            {
+              "points": [
+                {
+                  "x": 0.3,
+                  "y": 0.65
+                },
+                {
+                  "x": 0.7,
+                  "y": 0.65
+                }
+              ]
+            }
+          ],
+          "start": {
+            "x": 0.15,
+            "y": 1
+          },
+          "assistMode": true
+        },
+        {
+          "id": "playa-vocales-l4-a9-read",
+          "type": "read-relate",
+          "skillIds": [
+            "read-uno"
+          ],
+          "prerequisiteSkillIds": [],
+          "instructionAudioId": "instruction-read",
+          "difficulty": 1,
+          "hint": "¿Cuál dice uno?",
+          "hintAudioId": "hint-uno",
+          "targetText": "UNO",
+          "choices": [
+            {
+              "id": "c0-ojo",
+              "text": "OJO",
+              "imageId": "ojo",
+              "correct": false
+            },
+            {
+              "id": "c1-uno",
+              "text": "UNO",
+              "imageId": "uno",
+              "correct": true
+            }
+          ],
+          "correctChoiceIds": [
+            "c1-uno"
+          ]
+        }
+      ],
+      "newActivityIds": [
+        "playa-vocales-l4-a0-listen",
+        "playa-vocales-l4-a1-read",
+        "playa-vocales-l4-a2-trace",
+        "playa-vocales-l4-a3-build"
+      ],
+      "consolidationActivityIds": [
+        "playa-vocales-l4-a8-trace",
+        "playa-vocales-l4-a9-read"
+      ]
+    }
+  ]
+}
