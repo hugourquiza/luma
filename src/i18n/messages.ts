@@ -38,6 +38,28 @@ export const messages = {
   lessonComplete: '¡Lección completada!',
   sticker: '¡Pegatina nueva!',
   sessionIntro: 'Aprendé a tocar y escuchar',
+  // --- Persistencia en la nube (§1 del doc D1) ---
+  namePlaceholder: 'Nombre o apodo',
+  nameRequired: 'Escribí un nombre de 1 a 40 letras',
+  profileName: 'Nombre del perfil',
+  activeProfileName: 'Perfil activo',
+  saveToNet: 'Tu nombre/apodo y tu progreso se guardan en internet para que puedas recuperarlos desde otro dispositivo con tu código.',
+  adultConsentUpload: 'Subir este perfil y su progreso a internet',
+  saving: 'Guardando…',
+  savedOk: 'Guardado',
+  pendingOffline: 'Sin conexión: pendiente de guardar',
+  saveRetry: 'No pudimos guardar. Reintentar',
+  uploading: 'Subiendo a internet…',
+  uploadNeedsConfirm: 'Confirmá la subida de este perfil local para poder recuperarlo desde otro dispositivo.',
+  recoverTitle: 'Recuperar tu partida',
+  recoveryExplain: 'Si borrás los datos del navegador, tu partida quedará guardada en internet y podrás recuperarla escribiendo tu código.',
+  setRecovery: 'Conservá este código: te permite recuperar la partida.',
+  identityCreated: 'Identidad creada. Guardá el código de recuperación.',
+  identityRecovered: 'Identidad recuperada.',
+  identityError: 'No pudimos crear o recuperar tu identidad. Revisá la conexión.',
+  noIdentity: 'Todavía no configuraste la recuperación en internet.',
+  pendingCount: 'Cambios pendientes de guardar: {n}',
+  renameProfileLabel: 'Cambiar nombre',
 } as const;
 
 export type MessageKey = keyof typeof messages;

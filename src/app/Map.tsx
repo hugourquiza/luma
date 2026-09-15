@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react';
 import type { RegionMeta } from '../content/loader';
 import { loadRegionIndex } from '../content/loader';
 import { getLessonProgress } from '../storage/db';
+import type { Profile } from '../storage/db';
 
 interface Props {
   profileId: string;
+  profiles: Profile[];
   onLesson: (lessonId: string) => void;
   onAdult: () => void;
   onExit: () => void;
@@ -53,12 +55,13 @@ function Landscape({ region, completed }: { region: RegionMeta; completed: boole
   );
 }
 
-export default function Map({ profileId, onLesson, onAdult, onExit }: Props) {
+export default function Map({ profileId, profiles, onLesson, onAdult, onExit }: Props) {
   const [regions, setRegions] = useState<RegionMeta[]>([]);
   const [progress, setProgress] = useState<Record<string, boolean>>({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [reload, setReload] = useState(0);
+  const activeProfile = profiles.find((p) => p.id === profileId);
 
   useEffect(() => {
     let alive = true;
@@ -95,6 +98,9 @@ export default function Map({ profileId, onLesson, onAdult, onExit }: Props) {
         <h2>Tu mapa</h2>
         <button className="btn ghost" onClick={onAdult} aria-label="Para adultos">⚙</button>
       </div>
+      <p className="muted" style={{ textAlign: 'center', margin: '0 0 8px' }}>
+        {activeProfile ? `${activeProfile.displayName ?? activeProfile.avatarId} ${activeProfile.avatarId}` : ''}
+      </p>
       {loading ? <p role="status">Encendiendo el mapa…</p> : error ? (
         <div className="map-notice">
           <p role="alert">No pudimos cargar tu mapa. Tu progreso no se ha borrado.</p>
@@ -123,11 +129,17 @@ export default function Map({ profileId, onLesson, onAdult, onExit }: Props) {
                       className={`map-lesson${progress[id] ? ' completed' : ''}`}
                       disabled={!isUnlocked(id)}
                       aria-current={id === nextLesson ? 'step' : undefined}
-                      aria-label={`${region.name}, lección ${i + 1}: ${progress[id] ? 'completada, practicar otra vez' : isUnlocked(id) ? 'disponible' : 'bloqueada'}`}
+                      aria-label={
+                        progress[id]
+                          ? `${region.name}, lección ${i + 1}: repetir para practicar`
+                          : isUnlocked(id)
+                            ? `Comenzar ${region.name}, lección ${i + 1}`
+                            : `${region.name}, lección ${i + 1}: bloqueada`
+                      }
                       onClick={() => onLesson(id)}
                     >
                       <strong>{progress[id] ? '✓' : i + 1}</strong>
-                      <span>{progress[id] ? 'Repetir' : isUnlocked(id) ? 'Jugar' : 'Luego'}</span>
+                      <span>{progress[id] ? 'Repetir' : isUnlocked(id) ? 'Comenzar' : 'Luego'}</span>
                     </button>
                   ))}
                 </div>

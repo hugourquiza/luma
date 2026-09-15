@@ -74,7 +74,8 @@ test('completes the full first lesson with accessible trace-skip and earns a sti
   await page.goto('/');
   await page.getByRole('button', { name: /Jugar/i }).click();
   await page.getByRole('button', { name: /Nuevo perfil/i }).first().click();
-  await page.getByLabel(/Confirmo que el progreso se guarda solo en este dispositivo/i).check();
+  await page.getByLabel(/Nombre del perfil/i).fill('Luna');
+  await page.getByLabel(/Confirmo guardar el nombre y el progreso en internet/i).check();
   await page.getByRole('button', { name: /Continuar/i }).click();
 
   await expect(page.getByRole('button', { name: /Comenzar/i }).first()).toBeVisible({ timeout: 10_000 });
@@ -97,5 +98,5 @@ test('completes the full first lesson with accessible trace-skip and earns a sti
   await expect(page.locator('.sticker-grid')).toBeVisible();
   await page.getByRole('button', { name: /Volver al mapa/i }).click();
   await expect(page.getByText('Tu mapa')).toBeVisible({ timeout: 10_000 });
-  await expect(page.locator('.region-card .dot.done').first()).toBeVisible();
+  await expect(page.locator('.map-lesson.completed').first()).toBeVisible();
 });

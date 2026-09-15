@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { getSettings, saveSettings, openIslandDB, getProfiles, saveProfile, type Profile, type Settings } from '../storage/db';
 import { audioManager } from '../audio/audio';
+import { ensureIdentity, startSync, createProfileLocal, listProfilesWithCache, importLocalProfileRemote, hasIdentityRemote } from '../api/repository';
 import Home from './Home';
 import ProfileSelect from './ProfileSelect';
 import Map from './Map';
@@ -20,6 +21,8 @@ export interface AppState {
   loading: boolean;
   storageOk: boolean;
   activeProfileId: string | null;
+  hasRemote: boolean;
+  online: boolean;
 }
 
 export default function App() {
@@ -30,6 +33,8 @@ export default function App() {
     loading: true,
     storageOk: true,
     activeProfileId: null,
+    hasRemote: false,
+    online: true,
   });
 
   useEffect(() => {
@@ -37,20 +42,32 @@ export default function App() {
     (async () => {
       try {
         await openIslandDB();
+        // Identidad remota: no bloquea el arranque si falla (modo offline).
+        let hasRemote = false;
+        try {
+          hasRemote = await hasIdentityRemote();
+        } catch {
+          /* sin conexión inicial */
+        }
         const [profiles, settings] = await Promise.all([getProfiles(), getSettings()]);
         if (alive) {
-          setState((s) => ({ ...s, profiles, settings, loading: false, storageOk: true, activeProfileId: settings.activeProfileId ?? null }));
+          setState((s) => ({ ...s, profiles, settings, loading: false, storageOk: true, activeProfileId: settings.activeProfileId ?? null, hasRemote, online: navigator.onLine }));
           audioManager.setState({ muted: settings.muted, volume: settings.volume });
         }
+        // Arranca la sincronización de operaciones pendientes.
+        if (alive) startSync();
       } catch (e) {
-        // IndexedDB blocked → in-memory session only (§11)
+        // IndexedDB blocked → in-memory session only
         console.warn('IndexedDB no disponible', e);
         if (alive) setState((s) => ({ ...s, loading: false, storageOk: false }));
       }
     })();
-    return () => {
-      alive = false;
-    };
+    return () => { alive = false; };
+  }, []);
+
+  const refreshProfiles = useCallback(async () => {
+    const { profiles } = await listProfilesWithCache();
+    setState((s) => ({ ...s, profiles }));
   }, []);
 
   const updateSettings = useCallback(async (patch: Partial<Settings>) => {
@@ -62,10 +79,20 @@ export default function App() {
     try {
       const merged = { ...(await getSettings()), ...patch };
       await saveSettings(merged);
-    } catch {
-      /* keep in memory */
-    }
+    } catch { /* keep in memory */ }
   }, []);
+
+  const refreshOnline = useCallback(() => {
+    setState((s) => ({ ...s, online: navigator.onLine }));
+  }, []);
+  useEffect(() => {
+    window.addEventListener('online', refreshOnline);
+    window.addEventListener('offline', refreshOnline);
+    return () => {
+      window.removeEventListener('online', refreshOnline);
+      window.removeEventListener('offline', refreshOnline);
+    };
+  }, [refreshOnline]);
 
   const selectProfile = useCallback((id: string) => {
     setState((s) => ({ ...s, activeProfileId: id }));
@@ -79,6 +106,25 @@ export default function App() {
     }
   };
 
+  // Creación de perfil: guarda en caché local y lo envía a la nube en segundo
+  // plano (no bloquea el flujo). El perfil local permite jugar ya; la subida
+  // remota viaja cuando haya conexión/backend.
+  const handleNewProfile = useCallback(async (p: Profile) => {
+    if (state.storageOk) await saveProfile(p);
+    setState((s) => ({ ...s, profiles: [...s.profiles, p] }));
+    await createProfileLocal(p);
+    selectProfile(p.id);
+    setScreen({ name: 'map' });
+    void refreshProfiles(); // refresca desde remoto/caché en segundo plano
+  }, [state.storageOk, selectProfile, refreshProfiles]);
+
+  // Subir un perfil local preexistente (confirmación adulta) a la nube.
+  const handleUploadLocal = useCallback(async (p: Profile) => {
+    await ensureIdentity(); // si no existe identidad, la crea y guarda el código
+    await importLocalProfileRemote(p.id);
+    setState((s) => ({ ...s, hasRemote: true }));
+  }, []);
+
   const screenEl = useMemo(() => {
     const go = (s: Screen) => setScreen(s);
     switch (screen.name) {
@@ -89,25 +135,11 @@ export default function App() {
           <ProfileSelect
             profiles={state.profiles}
             storageOk={state.storageOk}
-            onSelect={(id) => {
-              selectProfile(id);
-              go({ name: 'map' });
-            }}
-            onNewProfile={(p) => {
-              // Persist the new profile atomically with the app state (§2 local profiles).
-              if (!state.storageOk) { setState((s) => ({ ...s, profiles: [...s.profiles, p] })); return; }
-              void (async () => {
-                try {
-                  await saveProfile(p);
-                  setState({ ...state, profiles: [...state.profiles, p] });
-                } catch (e) {
-                  console.error('no se pudo guardar el perfil', e);
-                }
-              })().then(() => {
-                selectProfile(p.id);
-                go({ name: 'map' });
-              });
-            }}
+            hasRemote={state.hasRemote}
+            online={state.online}
+            onSelect={(id) => { selectProfile(id); go({ name: 'map' }); }}
+            onNewProfile={handleNewProfile}
+            onUploadLocal={handleUploadLocal}
             onBack={() => go({ name: 'home' })}
           />
         );
@@ -115,6 +147,7 @@ export default function App() {
         return (
           <Map
             profileId={state.activeProfileId!}
+            profiles={state.profiles}
             onLesson={(lessonId) => go({ name: 'lesson', lessonId })}
             onAdult={() => go({ name: 'adult' })}
             onExit={() => go({ name: 'home' })}
@@ -138,7 +171,7 @@ export default function App() {
         return null;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [screen, state, selectProfile, updateSettings]);
+  }, [screen, state, selectProfile, updateSettings, handleNewProfile, handleUploadLocal]);
 
   void unlockAudio; // called via gesture handlers in children
 

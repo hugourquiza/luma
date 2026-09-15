@@ -8,10 +8,11 @@ test('creates a profile, completes lesson 1 first activity, reload preserves pro
   await expect(page.getByRole('heading', { name: /Isla de las Letras/i })).toBeVisible();
   await page.getByRole('button', { name: /Jugar/i }).click();
 
-  // New profile: first free avatar + consent
+  // New profile: first free avatar + name + consent
   const newBtn = page.getByRole('button', { name: /Nuevo perfil/i }).first();
   await newBtn.click();
-  await page.getByLabel(/Confirmo que el progreso se guarda solo en este dispositivo/i).check();
+  await page.getByLabel(/Nombre del perfil/i).fill('Luna');
+  await page.getByLabel(/Confirmo guardar el nombre y el progreso en internet/i).check();
   await page.getByRole('button', { name: /Continuar/i }).click();
 
   // Map → start first lesson
@@ -29,7 +30,7 @@ test('creates a profile, completes lesson 1 first activity, reload preserves pro
     for (let i = 0; i < count && !done; i++) {
       await clicks.nth(i).click();
       try {
-        await page.locator('.progress .dot.done').first().waitFor({ timeout: 1200 });
+        await page.locator('.progress .dot.done').first().waitFor({ timeout: 2500 });
         done = true;
       } catch {
         // wrong answer → next

@@ -37,6 +37,10 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
   if (url.origin !== self.location.origin) return;
 
+  // La API nunca pasa por el service worker: las respuestas privadas (progreso,
+  // sesión, recuperación) no deben cachearse ni caer en el fallback de la SPA.
+  if (url.pathname.startsWith('/api/')) return;
+
   const isNav = event.request.mode === 'navigate';
   const isAudio = url.pathname.startsWith('/audio/');
   const isJson = url.pathname.startsWith('/content/');

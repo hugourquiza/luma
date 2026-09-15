@@ -3,9 +3,11 @@ import type { Activity } from '../content/types';
 import { loadRegion } from '../content/loader';
 import { audioManager } from '../audio/audio';
 import {
-  getSession, saveSessionProgress, saveLessonProgress, addSticker,
-  getSkillProgress, saveSkillProgress, type Session,
+  saveSessionProgress, saveLessonProgress, addSticker,
+  type Session,
 } from '../storage/db';
+import { getResumeSession, saveCheckpointRemote, completeLessonRemote } from '../api/repository';
+import type { SaveCheckpointRequest, CompleteLessonRequest } from '../shared/schema';
 import ActivityRenderer from '../activities/ActivityRenderer';
 import { messages } from '../i18n/messages';
 
@@ -23,9 +25,38 @@ interface ActivityResult {
   independent: boolean;
   assisted: boolean;
   error: boolean;
+  /** id estable del intento (sobrevive reintentos de cierre). */
+  attemptId?: string;
 }
 
 type Outcome = { kind: 'idle' } | { kind: 'correct'; assisted: boolean } | { kind: 'wrong' };
+
+const RESUME_KEY = 'isla-resume:'; // + sessionId → JSON session snapshot (synchronous local mirror)
+
+function makeAttemptId(sessionId: string, activityId: string, seq: number): string {
+  // Estable para la misma sesión+actividad+secuencia → idempotencia parcial.
+  return `${sessionId}-${activityId}-${seq}`.replace(/[^a-zA-Z0-9-]/g, '');
+}
+
+interface ResumeSnapshot {
+  id: string; profileId: string; regionId: string; lessonId: string;
+  activityOrder: string[]; currentIndex: number; startedAt: number;
+}
+
+function saveResumeMirror(s: ResumeSnapshot): void {
+  try { localStorage.setItem(`${RESUME_KEY}${s.profileId}:${s.lessonId}`, JSON.stringify(s)); } catch { /* sin localStorage */ }
+}
+
+function readResumeMirror(profileId: string, lessonId: string): ResumeSnapshot | null {
+  try {
+    const raw = localStorage.getItem(`${RESUME_KEY}${profileId}:${lessonId}`);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as ResumeSnapshot;
+    if (!parsed || typeof parsed.id !== 'string' || !Array.isArray(parsed.activityOrder)) return null;
+    return parsed;
+  } catch { return null; }
+}
+
 
 export default function LessonRun({ regionId, lessonId, profileId, storageOk, onExit, onComplete }: Props) {
   const [lesson, setLesson] = useState<{ activities: Activity[] } | null>(null);
@@ -39,20 +70,25 @@ export default function LessonRun({ regionId, lessonId, profileId, storageOk, on
   const [attemptSeq, setAttemptSeq] = useState(0); // remount key for retry
   const [results, setResults] = useState<ActivityResult[]>([]);
   const [stickerEarned, setStickerEarned] = useState(false);
-  const [sessionId] = useState(() => crypto.randomUUID());
+  const [sessionId, setSessionId] = useState<string>(() => crypto.randomUUID());
+  const [startedAt, setStartedAt] = useState(() => Date.now());
   const [noStorage] = useState(!storageOk);
+  const [finishError, setFinishError] = useState(false);
 
-  // refs for the finish callback to read current results without stale closures
   const resultsRef = useRef<ActivityResult[]>([]);
-  useEffect(() => {
-    resultsRef.current = results;
-  }, [results]);
+  useEffect(() => { resultsRef.current = results; }, [results]);
   const orderRef = useRef<string[]>([]);
-  useEffect(() => {
-    orderRef.current = order;
-  }, [order]);
+  useEffect(() => { orderRef.current = order; }, [order]);
+  const idxRef = useRef(0);
+  useEffect(() => { idxRef.current = idx; }, [idx]);
+  const sessionIdRef = useRef(sessionId);
+  useEffect(() => { sessionIdRef.current = sessionId; }, [sessionId]);
+  const stateRef = useRef({ regionId, lessonId, profileId, storageOk, startedAt });
+  useEffect(() => { stateRef.current = { regionId, lessonId, profileId, storageOk, startedAt }; }, [regionId, lessonId, profileId, storageOk, startedAt]);
 
-  // --- load lesson; restore or default order (§6: persist selection) ---
+  const seqRef = useRef(0);
+
+  // --- load lesson; restore a resumable session for this profile+lesson ---
   useEffect(() => {
     let alive = true;
     (async () => {
@@ -61,14 +97,48 @@ export default function LessonRun({ regionId, lessonId, profileId, storageOk, on
       if (!ls) return;
       if (!alive) return;
       setLesson(ls);
-      setOrder(ls.activities.map((a) => a.id));
-      // resume an in-progress session for this profile+lesson
+      const defaultOrder = ls.activities.map((a) => a.id);
+      setOrder(defaultOrder);
       let resumeIdx = 0;
       if (storageOk) {
-        const existing = await getSession(profileId);
-        if (existing && existing.lessonId === lessonId && existing.currentIndex < existing.activityOrder.length) {
-          resumeIdx = existing.currentIndex;
-          setOrder(existing.activityOrder);
+        // Espejo local síncrono (localStorage): primera fuente, sobrevive a un
+        // reload inmediato sin esperar el commit asíncrono de IndexedDB.
+        const mirror = readResumeMirror(profileId, lessonId);
+        const known = new Set(defaultOrder);
+        const { session } = await getResumeSession(profileId, lessonId);
+        // El espejo síncrono (localStorage) es la fuente de verdad local para
+        // reanudar inmediato tras un reload; el session (IDB/API) solo lo
+        // complementa con los checkpointAttempts ya persistidos.
+        const effective = mirror ? {
+          ...(session && session.id === mirror.id ? { checkpointAttempts: session.checkpointAttempts } : { checkpointAttempts: [] }),
+          id: mirror.id, profileId, regionId: mirror.regionId, lessonId: mirror.lessonId,
+          activityOrder: mirror.activityOrder, currentIndex: mirror.currentIndex, status: 'active' as const,
+          startedAt: mirror.startedAt, updatedAt: Date.now(),
+        } : session;
+        if (effective) {
+          const validOrder = effective.activityOrder.filter((id) => known.has(id));
+          if (validOrder.length > 0 && effective.currentIndex < validOrder.length) {
+            setOrder(validOrder);
+            setSessionId(effective.id);
+            setStartedAt(effective.startedAt || Date.now());
+            resumeIdx = effective.currentIndex;
+            if (effective.checkpointAttempts?.length) {
+              const restored = effective.checkpointAttempts
+                .filter((a) => known.has(a.activityId))
+                .map((a) => ({
+                  activityId: a.activityId,
+                  independent: a.outcome === 'independent',
+                  assisted: a.outcome === 'assisted',
+                  error: a.outcome === 'error',
+                  attemptId: a.id,
+                }));
+              if (restored.length) {
+                resultsRef.current = restored;
+                setResults(restored);
+                seqRef.current = restored.length;
+              }
+            }
+          }
         }
       }
       if (alive) {
@@ -76,22 +146,8 @@ export default function LessonRun({ regionId, lessonId, profileId, storageOk, on
         setLoaded(true);
       }
     })();
-    return () => {
-      alive = false;
-      audioManager.stop();
-    };
+    return () => { alive = false; audioManager.stop(); };
   }, [regionId, lessonId, profileId, storageOk]);
-
-  // persist session on activity change (§11, §14 survive reload)
-  useEffect(() => {
-    if (!loaded || !order.length) return;
-    const s: Session = {
-      id: sessionId, profileId, regionId, lessonId,
-      activityOrder: order, currentIndex: idx,
-      startedAt: Date.now(), updatedAt: Date.now(),
-    };
-    if (storageOk) void saveSessionProgress(profileId, s, []);
-  }, [loaded, idx, order, profileId, lessonId, regionId, sessionId, storageOk]);
 
   const play = useCallback((audioId: string) => {
     audioManager.resume();
@@ -100,125 +156,159 @@ export default function LessonRun({ regionId, lessonId, profileId, storageOk, on
 
   const activity = loaded && lesson ? lesson.activities[idx] : null;
 
-  // ---- feedback ladder (§6): error1 kind, error2 hint, error3 demonstrate ----
-  const handleAnswered = useCallback((correct: boolean, assisted: boolean) => {
+  const buildCheckpointAttempts = useCallback((resultsList: ActivityResult[], sid: string): SaveCheckpointRequest['attempts'] => {
+    return resultsList.map((r) => {
+      const id = r.attemptId ?? makeAttemptId(sid, r.activityId, resultsList.indexOf(r));
+      return {
+        id, profileId: profileId, sessionId: sid, activityId: r.activityId,
+        outcome: r.error ? 'error' : r.assisted ? 'assisted' : 'independent',
+        retries: 0, assists: r.assisted ? 1 : 0, timestamp: Date.now(),
+      };
+    });
+  }, [profileId]);
+
+  // persist local session + remote checkpoint; local es await (debe sobrevivir
+  // a un reload inmediato), remoto es fire-and-forget (la cola lo reenvía).
+  const persist = useCallback(async (resultsList: ActivityResult[]) => {
+    const { regionId, lessonId, profileId } = stateRef.current;
+    const sid = sessionIdRef.current;
+    // La última respuesta ya está registrada; el índice pendiente es el
+    // siguiente (no se debe re-mostrar la actividad ya respondida).
+    const nextIndex = Math.min(idxRef.current + 1, orderRef.current.length);
+    const s: Session = {
+      id: sid, profileId, regionId, lessonId,
+      activityOrder: orderRef.current, currentIndex: nextIndex,
+      startedAt: startedAt, updatedAt: Date.now(),
+    };
+    try { await saveSessionProgress(profileId, s, []); } catch { /* sin IndexedDB */ }
+    saveResumeMirror({ id: sid, profileId, regionId, lessonId, activityOrder: orderRef.current, currentIndex: nextIndex, startedAt });
+    const req: SaveCheckpointRequest = {
+      sessionId: sid, regionId, lessonId,
+      activityOrder: orderRef.current, currentIndex: nextIndex,
+      attempts: buildCheckpointAttempts(resultsList, sid),
+      opId: `chk:${sid}:${resultsList.length}:${startedAt}`,
+    };
+    void saveCheckpointRemote(profileId, req).catch(() => {});
+  }, [buildCheckpointAttempts, startedAt]);
+
+  // ---- feedback ladder (§6) ----
+  const handleAnswered = useCallback(async (correct: boolean, assisted: boolean) => {
     if (!correct) {
       const next = errors + 1;
       setErrors(next);
       if (next === 1) setFeedback({ text: 'Probemos otra vez', kind: 'bad' });
       else if (next === 2) setFeedback({ text: 'Pista: mirá con atención', kind: 'hint' });
       else {
-        // demonstrate solution and let them repeat; register as assisted (§6)
         setFeedback({ text: 'Mirá cómo se hace y repetí', kind: 'solution' });
         const actId = orderRef.current[idxRef.current];
-        resultsRef.current = [...resultsRef.current, { activityId: actId, independent: false, assisted: true, error: false }];
-        setResults(resultsRef.current);
+        seqRef.current += 1;
+        const r: ActivityResult = { activityId: actId, independent: false, assisted: true, error: false, attemptId: makeAttemptId(sessionIdRef.current, actId, seqRef.current) };
+        const nextArr = [...resultsRef.current, r];
+        resultsRef.current = nextArr; setResults(nextArr);
         setErrors(0);
-        setOutcome({ kind: 'correct', assisted: true }); // reveal + advance
+        setOutcome({ kind: 'correct', assisted: true });
+        await persist(nextArr);
       }
       return;
     }
-    // correct → record and advance after observation
     const actId = orderRef.current[idxRef.current];
-    resultsRef.current = [...resultsRef.current, { activityId: actId, independent: !assisted, assisted, error: false }];
-    setResults(resultsRef.current);
+    seqRef.current += 1;
+    const r: ActivityResult = { activityId: actId, independent: !assisted, assisted, error: false, attemptId: makeAttemptId(sessionIdRef.current, actId, seqRef.current) };
+    const nextArr = [...resultsRef.current, r];
+    resultsRef.current = nextArr; setResults(nextArr);
     setErrors(0);
     setFeedback(null);
     setOutcome({ kind: 'correct', assisted });
-  }, [errors]);
+    // Espera el checkpoint local (IndexedDB) antes de que el dot.done permita
+    // un reload/test: la sesión debe sobrevivir aunque el usuario cierre ya.
+    await persist(nextArr);
+  }, [errors, persist]);
 
-  // After the 1st/2nd error, remount the child so the child can retry (§6 retry).
+  // retry remount after 1st/2nd error
   useEffect(() => {
     if (errors === 1 || errors === 2) {
-      const t = window.setTimeout(() => {
-        setAttemptSeq((s) => s + 1);
-        setOutcome({ kind: 'idle' });
-      }, 900);
+      const t = window.setTimeout(() => { setAttemptSeq((s) => s + 1); setOutcome({ kind: 'idle' }); }, 900);
       return () => window.clearTimeout(t);
     }
   }, [errors]);
 
-  const idxRef = useRef(0);
-  useEffect(() => {
-    idxRef.current = idx;
-  }, [idx]);
-
-  // ---- advance when outcome is correct after a beat to let child observe ----
+  // advance
   useEffect(() => {
     if (outcome.kind === 'correct') {
       const t = window.setTimeout(() => {
-        if (idxRef.current + 1 >= orderRef.current.length) {
-          void finishRun();
-        } else {
-          setIdx((i) => i + 1);
-          setAttemptSeq((s) => s + 1);
-        }
+        if (idxRef.current + 1 >= orderRef.current.length) void finishRun();
+        else { setIdx((i) => i + 1); setAttemptSeq((s) => s + 1); }
         setOutcome({ kind: 'idle' });
       }, 1400);
       return () => window.clearTimeout(t);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [outcome]);
 
-  // ---- finish: save lesson progress + sticker; separate progress from rewards ----
+  // ---- finish: atomic, idempotent close ----
   const finishRun = useCallback(async () => {
     setPhase('finish');
     const all = resultsRef.current;
+    const { regionId, lessonId, profileId } = stateRef.current;
     const region = await loadRegion(regionId);
     const ls = region.lessons.find((l) => l.id === lessonId);
     if (!ls) return;
+    const now = Date.now();
+    const sid = sessionIdRef.current;
+    const attemptDTOs = buildCheckpointAttempts(all, sid);
 
     if (storageOk) {
-      // §6: completing 6 enables next lesson; no perfection required
-      await saveLessonProgress({ lessonId, profileId, completed: true, lastCompletedAt: Date.now(), independentCount: all.filter((r) => r.independent).length });
-      const sticker = `sticker-${lessonId}`;
-      await addSticker(profileId, sticker, Date.now()); // no dup (§6)
+      await saveLessonProgress({ lessonId, profileId, completed: true, lastCompletedAt: now, independentCount: all.filter((r) => r.independent).length });
+      await addSticker(profileId, `sticker-${lessonId}`, now);
       setStickerEarned(true);
+      // Sesión completada: limpiar el espejo de reanudación (practicar de nuevo
+      // empieza desde cero, como dicta el diseño de "Repetir").
+      try { localStorage.removeItem(`${RESUME_KEY}${profileId}:${lessonId}`); } catch { /* sin localStorage */ }
 
-      // skill progress; separate learning data from rewards (§2)
+      const skillAgg: CompleteLessonRequest['skillProgress'] = [];
       for (const r of all) {
         const a = ls.activities.find((x) => x.id === r.activityId);
         if (!a) continue;
         for (const skillId of a.skillIds) {
-          const list = await getSkillProgress(profileId);
-          const cur = list.find((s) => s.skillId === skillId);
-          const last5 = [...(cur?.last5 ?? [])];
-          last5.push(r.independent);
-          while (last5.length > 5) last5.shift();
-          await saveSkillProgress({
-            skillId, profileId,
-            independent: (cur?.independent ?? 0) + (r.independent ? 1 : 0),
-            assisted: (cur?.assisted ?? 0) + (r.assisted ? 1 : 0),
-            errors: (cur?.errors ?? 0) + (r.error ? 1 : 0),
-            last5,
-            sessions: new Set([...(cur?.sessions ?? []), sessionId]),
-          });
+          const existing = skillAgg.find((s) => s.skillId === skillId);
+          if (existing) {
+            existing.independent += r.independent ? 1 : 0;
+            existing.assisted += r.assisted ? 1 : 0;
+            existing.errors += r.error ? 1 : 0;
+          } else {
+            skillAgg.push({ skillId, independent: r.independent ? 1 : 0, assisted: r.assisted ? 1 : 0, errors: r.error ? 1 : 0, last5: [r.independent], sessionsIn: [sid] });
+          }
         }
       }
 
-      // mark session consumed
-      const s: Session = {
-        id: sessionId, profileId, regionId, lessonId,
+      // Cierre remoto atómico e idempotente.
+      const completeReq: CompleteLessonRequest = {
+        sessionId: sid, regionId, lessonId,
         activityOrder: orderRef.current, currentIndex: orderRef.current.length,
-        startedAt: Date.now(), updatedAt: Date.now(),
+        attempts: attemptDTOs, results: attemptDTOs,
+        skillProgress: skillAgg,
+        lessonProgress: { lessonId, completed: true, lastCompletedAt: now, independentCount: all.filter((r) => r.independent).length },
+        sticker: { stickerId: `sticker-${lessonId}` },
+        opId: `cmp:${sid}:${now}`,
       };
-      await saveSessionProgress(profileId, s, []);
+      try {
+        await completeLessonRemote(profileId, completeReq);
+        setFinishError(false);
+      } catch {
+        setFinishError(true);
+      }
     }
-  }, [profileId, regionId, lessonId, sessionId, storageOk]);
+  }, [buildCheckpointAttempts, storageOk]);
 
-  if (!loaded || !activity) {
-    return <div className="screen"><p>Cargando lección...</p></div>;
-  }
+  if (!loaded || !activity) return <div className="screen"><p>Cargando lección...</p></div>;
 
   if (phase === 'finish') {
     return (
       <div className="screen" style={{ justifyContent: 'center', textAlign: 'center' }}>
         <h2>{messages.lessonComplete}</h2>
-        {stickerEarned && (
-          <div className="sticker-grid" aria-hidden="true">
-            <span className="sticker">⭐</span>
-          </div>
-        )}
+        {stickerEarned && <div className="sticker-grid" aria-hidden="true"><span className="sticker">⭐</span></div>}
         <p className="muted">¡Luma encendió otra parte de la isla!</p>
+        {finishError && <p className="feedback bad" aria-live="polite">{messages.pendingOffline}</p>}
         <div className="row" style={{ marginTop: 24 }}>
           <button className="btn big" onClick={onComplete}>{messages.backToMap}</button>
           <button className="btn secondary" onClick={() => window.location.reload()}>{messages.practiceAgain}</button>
@@ -233,19 +323,11 @@ export default function LessonRun({ regionId, lessonId, profileId, storageOk, on
       <div className="topbar">
         <button className="icon-btn" onClick={onExit} aria-label={messages.backToMap}>←</button>
         <div className="progress" aria-label="Progreso de la lección">
-          {order.map((_, i) => (
-            <span key={i} className={`dot${i < idx ? ' done' : ''}`} aria-hidden="true" />
-          ))}
+          {order.map((_, i) => <span key={i} className={`dot${i < idx ? ' done' : ''}`} aria-hidden="true" />)}
         </div>
         <span aria-hidden="true" style={{ width: 48 }} />
       </div>
-
-      {feedback && (
-        <p className={`feedback ${feedback.kind}`} aria-live="polite">
-          {feedback.text}
-        </p>
-      )}
-
+      {feedback && <p className={`feedback ${feedback.kind}`} aria-live="polite">{feedback.text}</p>}
       <ActivityRenderer
         key={attemptSeq}
         activity={activity}
@@ -254,7 +336,6 @@ export default function LessonRun({ regionId, lessonId, profileId, storageOk, on
         play={play}
         onAnswered={(res) => handleAnswered(res.correct, res.assisted)}
       />
-
       {noStorage && <p className="feedback bad">{messages.noStorage}</p>}
     </div>
   );

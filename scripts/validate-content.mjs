@@ -13,7 +13,7 @@ function loadAudioMap() {
   const map = {};
   if (!existsSync(audioDir)) return map;
   for (const f of readdirSync(audioDir)) {
-    if (f.endsWith('.mp3')) map[f.replace(/\.mp3$/, '')] = f;
+    if (f.endsWith('.mp3')) map[f.replace(/\.mp3$/, '').normalize('NFC')] = f;
   }
   return map;
 }
@@ -27,8 +27,10 @@ function note(msg) { notes.push(msg); }
 function checkAudio(id, where) {
   // Audio is generated/synthesized; if file missing, that's tolerated at
   // validation (delivered as audio-pendiente.md) but MUST be flagged.
+  // Normalize both sides a NFC: macOS filenames suelen estar en NFD mientras
+  // el JSON de contenido está en NFC (bug de tildes/ñ del validador original).
   if (!id) return;
-  if (!audioMap[id]) {
+  if (!audioMap[id.normalize('NFC')]) {
     err(`audio faltante: ${where} refiere audio "${id}" pero no existe public/audio/${id}.mp3`);
   }
 }

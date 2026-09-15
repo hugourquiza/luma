@@ -6,7 +6,8 @@ test('repeated wrong answers lead to assistance and the lesson still advances', 
   await page.goto('/');
   await page.getByRole('button', { name: /Jugar/i }).click();
   await page.getByRole('button', { name: /Nuevo perfil/i }).first().click();
-  await page.getByLabel(/Confirmo que el progreso se guarda solo en este dispositivo/i).check();
+  await page.getByLabel(/Nombre del perfil/i).fill('Luna');
+  await page.getByLabel(/Confirmo guardar el nombre y el progreso en internet/i).check();
   await page.getByRole('button', { name: /Continuar/i }).click();
   await page.getByRole('button', { name: /Comenzar/i }).first().click();
 

@@ -1,4 +1,4 @@
-# Security headers (§12)
+# Security headers
 /
   X-Content-Type-Options: nosniff
   Referrer-Policy: no-referrer
@@ -12,4 +12,9 @@
 # Audio MIME
 /audio/*
   Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+# API: respuestas privadas, nunca cacheadas (el Worker ya fuerza no-store en el body)
+/api/*
+  Cache-Control: no-store
   X-Content-Type-Options: nosniff
