@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "isla-de-las-letras",
+  "name": "luma",
   "main": "worker/src/index.ts",
   "compatibility_date": "2026-09-14",
   "vars": {
@@ -10,7 +10,7 @@
     {
       "binding": "DB",
       "database_name": "isla-de-las-letras",
-      "database_id": "<TU_DATABASE_ID>",
+      "database_id": "052f6a20-8980-4e91-aa72-f7589f05ff4e",
       "migrations_dir": "./migrations"
     }
   ],
