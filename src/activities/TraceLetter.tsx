@@ -11,21 +11,30 @@ interface Props {
 }
 
 const VIEW = 200;
+// Inner margin so glyphs whose skeleton touches 0 or 1 (e.g. the legs of "A")
+// never get clipped by the canvas edge. Normalized space [0,1] maps to
+// [PAD, VIEW - PAD] in SVG units.
+const PAD = 24;
+const INNER = VIEW - PAD * 2;
 
 export default function TraceLetter({ activity, onAnswered }: Props) {
   const canvasRef = useRef<HTMLDivElement>(null);
-  const [points, setPoints] = useState<Point[]>([]);
+  // One entry per pointer-down gesture; multi-stroke letters ("A", "p")
+  // need every stroke kept, not just the last one.
+  const [strokes, setStrokes] = useState<Point[][]>([]);
   const [drawing, setDrawing] = useState(false);
   const [state, setState] = useState<'idle' | 'correct' | 'wrong' | 'assist'>('idle');
   const [answered, setAnswered] = useState(false);
   const [assist, setAssist] = useState(false);
 
-  // normalized coordinate from pointer event relative to canvas box
+  // normalized coordinate from pointer event relative to the padded glyph box
   const norm = (e: React.PointerEvent): Point => {
     const rect = canvasRef.current!.getBoundingClientRect();
+    const sx = ((e.clientX - rect.left) / rect.width) * VIEW;
+    const sy = ((e.clientY - rect.top) / rect.height) * VIEW;
     return {
-      x: Math.min(1, Math.max(0, (e.clientX - rect.left) / rect.width)),
-      y: Math.min(1, Math.max(0, (e.clientY - rect.top) / rect.height)),
+      x: Math.min(1, Math.max(0, (sx - PAD) / INNER)),
+      y: Math.min(1, Math.max(0, (sy - PAD) / INNER)),
     };
   };
 
@@ -34,12 +43,17 @@ export default function TraceLetter({ activity, onAnswered }: Props) {
     e.preventDefault();
     (canvasRef.current as HTMLDivElement).setPointerCapture(e.pointerId);
     setDrawing(true);
-    setPoints([norm(e)]);
+    setStrokes((s) => [...s, [norm(e)]]);
   };
   const onPointerMove = (e: React.PointerEvent) => {
     if (!drawing || answered) return;
     e.preventDefault();
-    setPoints((p) => [...p, norm(e)]);
+    const pt = norm(e);
+    setStrokes((s) => {
+      if (s.length === 0) return [[pt]];
+      const last = s[s.length - 1];
+      return [...s.slice(0, -1), [...last, pt]];
+    });
   };
   const onPointerUp = (e: React.PointerEvent) => {
     if (!drawing) return;
@@ -50,12 +64,14 @@ export default function TraceLetter({ activity, onAnswered }: Props) {
     }
   };
 
+  const points = strokes.flat();
+  const hasInk = points.length > 0;
+
   const check = () => {
-    if (points.length === 0 || answered) return;
+    if (!hasInk || answered) return;
     setAnswered(true);
-    // single-stroke model: combine all strokes into one ideal path for v1
-    const ideal = activity.strokes.flatMap((s) => s.points);
-    const res = evaluateTrace(points, ideal, assist ? { corridor: 0.14, startTolerance: 0.16 } : {});
+    const ideal = activity.strokes.map((s) => s.points);
+    const res = evaluateTrace(strokes, ideal, assist ? { corridor: 0.14, startTolerance: 0.16 } : {});
     const ok = res.pass;
     // If assist mode is on, allow a more permissive pass but mark assisted.
     if (ok) {
@@ -68,12 +84,16 @@ export default function TraceLetter({ activity, onAnswered }: Props) {
   };
 
   const reset = () => {
-    setPoints([]);
+    setStrokes([]);
     setAnswered(false);
     setState('idle');
   };
 
-  const toSvgCoord = (p: Point) => ({ x: p.x * VIEW, y: p.y * VIEW });
+  const toSvgCoord = (p: Point) => ({ x: PAD + p.x * INNER, y: PAD + p.y * INNER });
+  const svgPt = (p: Point) => {
+    const c = toSvgCoord(p);
+    return `${c.x} ${c.y}`;
+  };
 
   // ideal glyph for visual guide
   const guideStart = toSvgCoord(activity.start);
@@ -95,7 +115,7 @@ export default function TraceLetter({ activity, onAnswered }: Props) {
           {activity.strokes.map((stroke, si) => (
             <path
               key={si}
-              d={'M' + stroke.points.map((p) => `${p.x * VIEW} ${p.y * VIEW}`).join(' L')}
+              d={'M' + stroke.points.map(svgPt).join(' L')}
               fill="none"
               stroke="#E0D5C4"
               strokeWidth={assist ? 22 : 10}
@@ -114,14 +134,17 @@ export default function TraceLetter({ activity, onAnswered }: Props) {
             return <line key={i} x1={a.x} y1={a.y} x2={b.x} y2={b.y} stroke="#FF6F61" strokeWidth={2} strokeDasharray="2 4" opacity={0.6} />;
           })}
           {/* user strokes */}
-          <polyline
-            points={points.map((p) => `${p.x * VIEW},${p.y * VIEW}`).join(' ')}
-            fill="none"
-            stroke="#7CB342"
-            strokeWidth={10}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
+          {strokes.map((stroke, i) => (
+            <polyline
+              key={i}
+              points={stroke.map((p) => svgPt(p).replace(' ', ',')).join(' ')}
+              fill="none"
+              stroke="#7CB342"
+              strokeWidth={10}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          ))}
         </svg>
       </div>
 
@@ -139,9 +162,9 @@ export default function TraceLetter({ activity, onAnswered }: Props) {
           disabled={answered}
           aria-pressed={assist}
         >
-          {assist ? 'Practicar con ayuda' : 'Practicar con ayuda'}
+          {assist ? 'Ayuda activada' : 'Practicar con ayuda'}
         </button>
-        <button className="btn" onClick={check} disabled={points.length === 0 || answered}>
+        <button className="btn" onClick={check} disabled={!hasInk || answered}>
           Listo
         </button>
       </div>

@@ -189,7 +189,8 @@ label.consent input { width: 24px; height: 24px; margin-top: 4px; }
 /* ---------- tracing ---------- */
 .trace-wrap { width: 100%; max-width: 400px; touch-action: none; }
 .trace-canvas {
-  width: 100%; background: var(--paper);
+  display: block; width: 100%; aspect-ratio: 1 / 1; overflow: hidden;
+  background: var(--paper);
   border-radius: var(--radius); box-shadow: var(--shadow);
   touch-action: none;
 }

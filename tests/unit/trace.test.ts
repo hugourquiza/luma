@@ -50,3 +50,42 @@ describe('evaluateTrace (§5.5)', () => {
     expect(r.pass).toBe(true);
   });
 });
+
+// Multi-stroke letters (e.g. "A"): the ideal has long straight segments, so
+// distances must be measured to segments, and every pen-down stroke counts.
+describe('evaluateTrace with multiple strokes', () => {
+  const P = (x: number, y: number): Point => ({ x, y });
+  const idealA = [
+    [P(0.15, 1), P(0.5, 0.1), P(0.85, 1)],
+    [P(0.3, 0.65), P(0.7, 0.65)],
+  ];
+  const seg = (a: Point, b: Point, n = 25): Point[] =>
+    Array.from({ length: n + 1 }, (_, i) => P(a.x + ((b.x - a.x) * i) / n, a.y + ((b.y - a.y) * i) / n));
+  const legs = [...seg(P(0.15, 1), P(0.5, 0.1)), ...seg(P(0.5, 0.1), P(0.85, 1))];
+  const bar = seg(P(0.3, 0.65), P(0.7, 0.65));
+
+  it('passes a clean two-stroke A', () => {
+    const r = evaluateTrace([legs, bar], idealA);
+    expect(r.reason).toBe('ok');
+    expect(r.pass).toBe(true);
+  });
+
+  it('fails when the crossbar is missing (low coverage)', () => {
+    const r = evaluateTrace([legs], idealA);
+    expect(r.pass).toBe(false);
+    expect(r.reason).toBe('low-coverage');
+  });
+
+  it('fails when started from the wrong leg', () => {
+    const reversed = [...legs].reverse();
+    const r = evaluateTrace([reversed, bar], idealA);
+    expect(r.pass).toBe(false);
+    expect(r.startOk).toBe(false);
+  });
+
+  it('fails a wobbly trace far from the guide', () => {
+    const off = legs.map((p) => P(p.x + 0.25, p.y));
+    const r = evaluateTrace([off, bar], idealA);
+    expect(r.pass).toBe(false);
+  });
+});
